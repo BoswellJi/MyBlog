@@ -1,0 +1,1 @@
+const e={key:"v-962f9daa",path:"/english/%E7%89%B9%E6%AE%8A%E5%8F%A5%E5%BC%8F/there-be.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1660138466e3,contributors:[{name:"Boswell",email:"aiyoudqrjmz@163.com",commits:1}]},filePathRelative:"english/\u7279\u6B8A\u53E5\u5F0F/there-be.md"};export{e as data};

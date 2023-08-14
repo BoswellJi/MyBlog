@@ -1,0 +1,1 @@
+const e={key:"v-3abc7416",path:"/appium/",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"appium",slug:"appium",children:[]}],git:{updatedTime:1660138466e3,contributors:[{name:"Boswell",email:"aiyoudqrjmz@163.com",commits:1}]},filePathRelative:"appium/readme.md"};export{e as data};

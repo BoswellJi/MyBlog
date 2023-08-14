@@ -1,0 +1,1 @@
+const e={key:"v-a1966496",path:"/vue/vue2.x%E7%9F%A5%E8%AF%86%E7%82%B9/slot.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u63D2\u69FD",slug:"\u63D2\u69FD",children:[]}],git:{updatedTime:1660138466e3,contributors:[{name:"Boswell",email:"aiyoudqrjmz@163.com",commits:1}]},filePathRelative:"vue/vue2.x\u77E5\u8BC6\u70B9/slot.md"};export{e as data};

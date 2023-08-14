@@ -1,0 +1,1 @@
+const t={key:"v-77bd855c",path:"/project/vpn-admin.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1660138466e3,contributors:[{name:"Boswell",email:"aiyoudqrjmz@163.com",commits:1}]},filePathRelative:"project/vpn-admin.md"};export{t as data};

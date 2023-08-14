@@ -1,0 +1,1 @@
+const e={key:"v-2e8f3b88",path:"/microfrontend/core.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u5FAE\u524D\u7AEF",slug:"\u5FAE\u524D\u7AEF",children:[{level:3,title:"\u5FAE\u5E94\u7528",slug:"\u5FAE\u5E94\u7528",children:[]}]}],git:{updatedTime:null,contributors:[]},filePathRelative:"microfrontend/core.md"};export{e as data};

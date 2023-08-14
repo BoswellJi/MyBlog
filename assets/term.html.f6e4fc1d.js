@@ -1,0 +1,1 @@
+const t={key:"v-1bd160d2",path:"/operating-system/term.html",title:"\u672F\u8BED",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1680179516e3,contributors:[{name:"mingzhuang.ji",email:"mingzhuang.ji@ly.com",commits:1}]},filePathRelative:"operating-system/term.md"};export{t as data};

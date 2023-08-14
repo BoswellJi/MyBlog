@@ -1,0 +1,1 @@
+const e={key:"v-63d5416c",path:"/webpack/tree-shaking.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u4F7F\u7528\u6B65\u9AA4",slug:"\u4F7F\u7528\u6B65\u9AA4",children:[]}],git:{updatedTime:1660138466e3,contributors:[{name:"Boswell",email:"aiyoudqrjmz@163.com",commits:1}]},filePathRelative:"webpack/tree-shaking.md"};export{e as data};

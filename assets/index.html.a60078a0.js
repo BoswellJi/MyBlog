@@ -1,0 +1,1 @@
+const e={key:"v-154c007b",path:"/spec/",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1660138466e3,contributors:[{name:"Boswell",email:"aiyoudqrjmz@163.com",commits:1}]},filePathRelative:"spec/readme.md"};export{e as data};

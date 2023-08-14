@@ -1,0 +1,1 @@
+const e={key:"v-04074726",path:"/js/object.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u5B57\u9762\u91CF\u5BF9\u8C61",slug:"\u5B57\u9762\u91CF\u5BF9\u8C61",children:[]}],git:{updatedTime:1683372978e3,contributors:[{name:"mingzhuang.ji",email:"mingzhuang.ji@ly.com",commits:1}]},filePathRelative:"js/object.md"};export{e as data};

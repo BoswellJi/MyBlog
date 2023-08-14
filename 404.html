@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.38">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>Hello, Boswell!</title><meta name="description" content="Boswell's blog">
+    <link rel="modulepreload" href="/MyBlog/assets/app.6e60246e.js"><link rel="modulepreload" href="/MyBlog/assets/404.html.df6eabeb.js"><link rel="modulepreload" href="/MyBlog/assets/404.html.d6c35ae5.js">
+    <link rel="stylesheet" href="/MyBlog/assets/style.cdbfaf13.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><div class="theme-default-content"><h1>404</h1><blockquote>Looks like we&#39;ve got some broken links.</blockquote><a href="/MyBlog/" class="">Take me home</a></div></div><!----><!--]--></div>
+    <script type="module" src="/MyBlog/assets/app.6e60246e.js" defer></script>
+  </body>
+</html>

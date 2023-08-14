@@ -1,0 +1,1 @@
+const e={key:"v-765cfdbe",path:"/babel/",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"plugins",slug:"plugins",children:[]},{level:2,title:"presets",slug:"presets",children:[]}],git:{updatedTime:1660138466e3,contributors:[{name:"Boswell",email:"aiyoudqrjmz@163.com",commits:1}]},filePathRelative:"babel/readme.md"};export{e as data};

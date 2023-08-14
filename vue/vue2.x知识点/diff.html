@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.38">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>Hello, Boswell!</title><meta name="description" content="Boswell's blog">
+    <link rel="modulepreload" href="/MyBlog/assets/app.6e60246e.js"><link rel="modulepreload" href="/MyBlog/assets/diff.html.8e276c80.js"><link rel="modulepreload" href="/MyBlog/assets/diff.html.78896cd1.js">
+    <link rel="stylesheet" href="/MyBlog/assets/style.cdbfaf13.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/MyBlog/" class=""><img class="logo" src="https://oss.kaoyanvip.cn/attach/file1648716513725.jpg" alt="Hello, Boswell!"><span class="site-name can-hide">Hello, Boswell!</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button class="toggle-dark-button" title="toggle dark mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><!----><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading"> <!----></p><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/MyBlog/vue/vue2.x%E7%9F%A5%E8%AF%86%E7%82%B9/diff.html#diff的应用场景" class="router-link-active router-link-exact-active sidebar-item" aria-label="diff的应用场景"><!--[--><!--]--> diff的应用场景 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/MyBlog/vue/vue2.x%E7%9F%A5%E8%AF%86%E7%82%B9/diff.html#dom操作的性能问题" class="router-link-active router-link-exact-active sidebar-item" aria-label="DOM操作的性能问题"><!--[--><!--]--> DOM操作的性能问题 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/MyBlog/vue/vue2.x%E7%9F%A5%E8%AF%86%E7%82%B9/diff.html#children对比方案" class="router-link-active router-link-exact-active sidebar-item" aria-label="children对比方案"><!--[--><!--]--> children对比方案 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/MyBlog/vue/vue2.x%E7%9F%A5%E8%AF%86%E7%82%B9/diff.html#diff中的优化" class="router-link-active router-link-exact-active sidebar-item" aria-label="diff中的优化"><!--[--><!--]--> diff中的优化 <!--[--><!--]--></a><!----></li><!--]--></ul><!--]--></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h2 id="diff的应用场景" tabindex="-1"><a class="header-anchor" href="#diff的应用场景" aria-hidden="true">#</a> diff的应用场景</h2><ul><li>新vnode和旧vnode的子节点都是多个的时候；</li></ul><h2 id="dom操作的性能问题" tabindex="-1"><a class="header-anchor" href="#dom操作的性能问题" aria-hidden="true">#</a> DOM操作的性能问题</h2><ul><li>创建，移除；</li></ul><h2 id="children对比方案" tabindex="-1"><a class="header-anchor" href="#children对比方案" aria-hidden="true">#</a> children对比方案</h2><ul><li>对比children中相同位置的vnode作为一对新旧对vnode对比；</li><li>根据新children和旧children长度中较短的进行遍历patch，之后根据当前children的长度大于旧children就新增，少于就删除；</li></ul><h2 id="diff中的优化" tabindex="-1"><a class="header-anchor" href="#diff中的优化" aria-hidden="true">#</a> diff中的优化</h2><ul><li>这里的优化需要注意DOM的复用，因为有时候可以看出，vnode列表只是位置发生变化；</li><li>移动元素的关键在于：我们需要在新旧children的节点中保存映射关系；</li><li>vnode中key的作用是映射到vnode,因为vnode中没有key的情况下，没法知道新children中节点是否在旧vnode下找到可复用节点;</li></ul><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: aiyoudqrjmz@163.com">Boswell</span><!----><!--]--><!--]--></span></div></footer><!----><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/MyBlog/assets/app.6e60246e.js" defer></script>
+  </body>
+</html>

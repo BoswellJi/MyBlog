@@ -1,0 +1,7 @@
+import{_ as e,e as n}from"./app.6e60246e.js";const a={},s=n(`<h2 id="webgl\u7684\u6E32\u67D3\u6D41\u7A0B" tabindex="-1"><a class="header-anchor" href="#webgl\u7684\u6E32\u67D3\u6D41\u7A0B" aria-hidden="true">#</a> webgl\u7684\u6E32\u67D3\u6D41\u7A0B</h2><ul><li>\u6E32\u67D3\u7BA1\u7EBF\u6D41\u7A0B\u56FE</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>           uniform\u6570\u636E                                                  uniform\u6570\u636E+\u7EB9\u7406\u7F13\u51B2\u533A
+\u9876\u70B9\u7F13\u51B2\u533A   -------&gt;   \u9876\u70B9\u7740\u8272\u5668 ----&gt;  \u56FE\u5143\u88C5\u914D  ----&gt;  \u5149\u6805\u5668  -----&gt;  \u7247\u5143\u7740\u8272\u5668
+
+                                                                         \u6DF1\u5EA6\u7F13\u51B2\u533A
+------&gt; \u5F52\u5C5E/\u526A\u88C1\u6D4B\u8BD5 ------&gt; \u591A\u91CD\u91C7\u6837\uFF0C\u7247\u6BB5\u8FD0\u7B97 ------&gt; \u6A21\u677F\u6D4B\u8BD5 -------&gt;  \u6DF1\u5EA6\u6D4B\u8BD5 -------&gt;  \u878D\u5408 --------&gt;  \u6296\u52A8 -------&gt; \u989C\u8272\u7F13\u51B2\u533A
+
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div>`,3);function r(t,l){return s}var c=e(a,[["render",r],["__file","webgl\u7684\u6E32\u67D3\u6D41\u7A0B.html.vue"]]);export{c as default};

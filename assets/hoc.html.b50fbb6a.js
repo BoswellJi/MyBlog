@@ -1,0 +1,1 @@
+const e={key:"v-1e8a83e6",path:"/react/hoc.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u6982\u5FF5\u5B9A\u4E49",slug:"\u6982\u5FF5\u5B9A\u4E49",children:[]}],git:{updatedTime:1660138466e3,contributors:[{name:"Boswell",email:"aiyoudqrjmz@163.com",commits:1}]},filePathRelative:"react/hoc.md"};export{e as data};

@@ -1,0 +1,1 @@
+const t={key:"v-556c7834",path:"/ts/warning.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1685004992e3,contributors:[{name:"mingzhuang.ji",email:"mingzhuang.ji@ly.com",commits:1}]},filePathRelative:"ts/warning.md"};export{t as data};

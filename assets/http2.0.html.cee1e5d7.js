@@ -1,0 +1,1 @@
+const t={key:"v-2e58ccbb",path:"/http/http2.0.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1660138466e3,contributors:[{name:"Boswell",email:"aiyoudqrjmz@163.com",commits:1}]},filePathRelative:"http/http2.0.md"};export{t as data};

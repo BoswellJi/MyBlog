@@ -1,0 +1,1 @@
+const e={key:"v-2d0abff7",path:"/ts/",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u5B89\u5168\u4EE3\u7801",slug:"\u5B89\u5168\u4EE3\u7801",children:[]}],git:{updatedTime:1660138466e3,contributors:[{name:"Boswell",email:"aiyoudqrjmz@163.com",commits:1}]},filePathRelative:"ts/readme.md"};export{e as data};

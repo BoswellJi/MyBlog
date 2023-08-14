@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.38">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>Hello, Boswell!</title><meta name="description" content="Boswell's blog">
+    <link rel="modulepreload" href="/MyBlog/assets/app.6e60246e.js"><link rel="modulepreload" href="/MyBlog/assets/concurrent-mode.html.92a8af56.js"><link rel="modulepreload" href="/MyBlog/assets/concurrent-mode.html.49cd7678.js">
+    <link rel="stylesheet" href="/MyBlog/assets/style.cdbfaf13.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/MyBlog/" class=""><img class="logo" src="https://oss.kaoyanvip.cn/attach/file1648716513725.jpg" alt="Hello, Boswell!"><span class="site-name can-hide">Hello, Boswell!</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button class="toggle-dark-button" title="toggle dark mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><!----><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading"> <!----></p><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/MyBlog/react/concurrent-mode.html#并发模型" class="router-link-active router-link-exact-active sidebar-item" aria-label="并发模型"><!--[--><!--]--> 并发模型 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/MyBlog/react/concurrent-mode.html#可中断的渲染-interruptible-rendering" class="router-link-active router-link-exact-active sidebar-item" aria-label="可中断的渲染(interruptible rendering"><!--[--><!--]--> 可中断的渲染(interruptible rendering <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/MyBlog/react/concurrent-mode.html#阻塞式渲染-blocking-rendering" class="router-link-active router-link-exact-active sidebar-item" aria-label="阻塞式渲染（blocking rendering"><!--[--><!--]--> 阻塞式渲染（blocking rendering <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/MyBlog/react/concurrent-mode.html#故意的加载序列" class="router-link-active router-link-exact-active sidebar-item" aria-label="故意的加载序列"><!--[--><!--]--> 故意的加载序列 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/MyBlog/react/concurrent-mode.html#浏览器调度函数" class="router-link-active router-link-exact-active sidebar-item" aria-label="浏览器调度函数"><!--[--><!--]--> 浏览器调度函数 <!--[--><!--]--></a><!----></li><!--]--></ul><!--]--></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h2 id="并发模型" tabindex="-1"><a class="header-anchor" href="#并发模型" aria-hidden="true">#</a> 并发模型</h2><ul><li>帮助app保持响应并且根据用户设备能力和网络速度降级调整；</li><li>可以同时处理几个状态更新，就像是不同分支可以由不同团队处理；</li></ul><h2 id="可中断的渲染-interruptible-rendering" tabindex="-1"><a class="header-anchor" href="#可中断的渲染-interruptible-rendering" aria-hidden="true">#</a> 可中断的渲染(interruptible rendering</h2><ul><li><p>不会阻止更新输入框文本；一边让浏览器绘制更新到输入框中，一边渲染列表的更新到内存中；当下面渲染完成更新DOM，将变更映射到屏幕上；</p></li><li><p>每次更新在一个分支上；</p></li></ul><h2 id="阻塞式渲染-blocking-rendering" tabindex="-1"><a class="header-anchor" href="#阻塞式渲染-blocking-rendering" aria-hidden="true">#</a> 阻塞式渲染（blocking rendering</h2><ul><li><p>因为每次渲染开始（创建新DOM和浏览器布局计算）就不会被中断；这个叫做阻塞式渲染；</p></li><li><p>案例：输入框输入，实时查看筛选列表问题？</p><ul><li>一般我们会使用debounce，防抖/节流来优化，但是一旦渲染开始就不会被中断；</li></ul></li></ul><h2 id="故意的加载序列" tabindex="-1"><a class="header-anchor" href="#故意的加载序列" aria-hidden="true">#</a> 故意的加载序列</h2><h2 id="浏览器调度函数" tabindex="-1"><a class="header-anchor" href="#浏览器调度函数" aria-hidden="true">#</a> 浏览器调度函数</h2><ul><li>requestAnimationFrame：帧数控制调用</li><li>requestIdleCallback：闲时调用</li><li>web worker：多线程调用</li><li>intersecionObserver: 进入可视区域调用</li></ul><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: aiyoudqrjmz@163.com">Boswell</span><!----><!--]--><!--]--></span></div></footer><!----><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/MyBlog/assets/app.6e60246e.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+const e={key:"v-a05bf4d4",path:"/project/game-admin.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:3,title:"\u9875\u9762ui\u56FE",slug:"\u9875\u9762ui\u56FE",children:[]}],git:{updatedTime:1660138466e3,contributors:[{name:"Boswell",email:"aiyoudqrjmz@163.com",commits:1}]},filePathRelative:"project/game-admin.md"};export{e as data};
