@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as r}from"./app-BfoDZ5rG.js";const c={};function n(o,a){return r(),t("div")}const m=e(c,[["render",n]]),_=JSON.parse('{"path":"/vue/vue2.x%E7%9F%A5%E8%AF%86%E7%82%B9/custom-renderer.html","title":"","lang":"en-US","frontmatter":{},"git":{},"filePathRelative":"vue/vue2.x知识点/custom-renderer.md"}');export{m as comp,_ as data};

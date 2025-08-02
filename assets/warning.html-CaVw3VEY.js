@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as n}from"./app-BfoDZ5rG.js";const a={};function r(c,o){return n(),e("div")}const i=t(a,[["render",r]]),_=JSON.parse('{"path":"/ts/warning.html","title":"","lang":"en-US","frontmatter":{},"git":{},"filePathRelative":"ts/warning.md"}');export{i as comp,_ as data};

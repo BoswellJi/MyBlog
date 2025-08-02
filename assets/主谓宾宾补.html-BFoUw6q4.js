@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as n}from"./app-BfoDZ5rG.js";const a={};function c(_,o){return n(),e("div")}const s=t(a,[["render",c]]),E=JSON.parse('{"path":"/english/%E5%8F%A5%E5%AD%90/%E4%B8%BB%E8%B0%93%E5%AE%BE%E5%AE%BE%E8%A1%A5.html","title":"","lang":"en-US","frontmatter":{},"git":{},"filePathRelative":"english/句子/主谓宾宾补.md"}');export{s as comp,E as data};

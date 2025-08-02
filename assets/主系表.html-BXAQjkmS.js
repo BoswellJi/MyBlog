@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as n}from"./app-BfoDZ5rG.js";const a={};function c(o,r){return n(),e("div")}const _=t(a,[["render",c]]),l=JSON.parse('{"path":"/english/%E5%8F%A5%E5%AD%90/%E4%B8%BB%E7%B3%BB%E8%A1%A8.html","title":"","lang":"en-US","frontmatter":{},"git":{},"filePathRelative":"english/句子/主系表.md"}');export{_ as comp,l as data};

@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as r}from"./app-BfoDZ5rG.js";const n={};function a(c,o){return r(),t("div")}const l=e(n,[["render",a]]),h=JSON.parse('{"path":"/english/%E7%89%B9%E6%AE%8A%E5%8F%A5%E5%BC%8F/there-be.html","title":"","lang":"en-US","frontmatter":{},"git":{},"filePathRelative":"english/特殊句式/there-be.md"}');export{l as comp,h as data};

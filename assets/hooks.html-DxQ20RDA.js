@@ -1,0 +1,1 @@
+import{_ as t,c as e,o}from"./app-BfoDZ5rG.js";const a={};function c(r,n){return o(),e("div")}const _=t(a,[["render",c]]),l=JSON.parse('{"path":"/react/hooks.html","title":"","lang":"en-US","frontmatter":{},"git":{},"filePathRelative":"react/hooks.md"}');export{_ as comp,l as data};

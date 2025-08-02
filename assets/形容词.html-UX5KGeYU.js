@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as n}from"./app-BfoDZ5rG.js";const a={};function c(o,r){return n(),e("div")}const _=t(a,[["render",c]]),l=JSON.parse('{"path":"/english/%E8%AF%8D%E6%80%A7/%E5%BD%A2%E5%AE%B9%E8%AF%8D.html","title":"","lang":"en-US","frontmatter":{},"git":{},"filePathRelative":"english/词性/形容词.md"}');export{_ as comp,l as data};

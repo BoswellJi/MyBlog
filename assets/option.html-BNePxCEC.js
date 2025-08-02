@@ -1,0 +1,1 @@
+import{_ as t,c as e,o}from"./app-BfoDZ5rG.js";const n={};function a(c,r){return o(),e("div")}const s=t(n,[["render",a]]),p=JSON.parse('{"path":"/vue/vue2.x%E7%9F%A5%E8%AF%86%E7%82%B9/option.html","title":"","lang":"en-US","frontmatter":{},"git":{},"filePathRelative":"vue/vue2.x知识点/option.md"}');export{s as comp,p as data};

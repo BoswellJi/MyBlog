@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as n}from"./app-BfoDZ5rG.js";const a={};function c(o,r){return n(),e("div")}const _=t(a,[["render",c]]),l=JSON.parse('{"path":"/english/%E7%89%B9%E6%AE%8A%E5%8F%A5%E5%BC%8F/%E5%90%8C%E4%BD%8D%E8%AF%AD.html","title":"","lang":"en-US","frontmatter":{},"git":{},"filePathRelative":"english/特殊句式/同位语.md"}');export{_ as comp,l as data};

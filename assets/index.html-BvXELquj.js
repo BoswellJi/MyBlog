@@ -1,0 +1,6 @@
+import{_ as a,c as s,b as n,o as i}from"./app-BfoDZ5rG.js";const l={};function t(c,e){return i(),s("div",null,e[0]||(e[0]=[n(`<h2 id="概述" tabindex="-1"><a class="header-anchor" href="#概述"><span>概述</span></a></h2><ul><li>优先队列 <ul><li>给队列的节点添加权重（优先级</li></ul></li></ul><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">function Person(name,code){</span>
+<span class="line">  this.name = name;</span>
+<span class="line">  this.code = code;</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,3)]))}const d=a(l,[["render",t]]),o=JSON.parse('{"path":"/books/javascript/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95javascript%E6%8F%8F%E8%BF%B0/5%E9%98%9F%E5%88%97/","title":"","lang":"en-US","frontmatter":{},"git":{},"filePathRelative":"books/javascript/数据结构与算法javascript描述/5队列/readme.md"}');export{d as comp,o as data};

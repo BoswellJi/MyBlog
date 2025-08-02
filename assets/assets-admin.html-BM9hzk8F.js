@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as a}from"./app-BfoDZ5rG.js";const s={};function c(n,o){return a(),e("div")}const m=t(s,[["render",c]]),i=JSON.parse('{"path":"/project/assets-admin.html","title":"","lang":"en-US","frontmatter":{},"git":{},"filePathRelative":"project/assets-admin.md"}');export{m as comp,i as data};

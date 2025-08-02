@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as n}from"./app-BfoDZ5rG.js";const a={};function c(_,o){return n(),e("div")}const s=t(a,[["render",c]]),E=JSON.parse('{"path":"/english/%E7%89%B9%E6%AE%8A%E5%8F%A5%E5%BC%8F/%E5%8F%8D%E4%B9%89%E7%96%91%E9%97%AE%E5%8F%A5.html","title":"","lang":"en-US","frontmatter":{},"git":{},"filePathRelative":"english/特殊句式/反义疑问句.md"}');export{s as comp,E as data};

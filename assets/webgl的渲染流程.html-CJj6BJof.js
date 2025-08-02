@@ -1,0 +1,7 @@
+import{_ as n,c as s,b as a,o as l}from"./app-BfoDZ5rG.js";const i={};function t(r,e){return l(),s("div",null,e[0]||(e[0]=[a(`<h2 id="webgl的渲染流程" tabindex="-1"><a class="header-anchor" href="#webgl的渲染流程"><span>webgl的渲染流程</span></a></h2><ul><li>渲染管线流程图</li></ul><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">           uniform数据                                                  uniform数据+纹理缓冲区</span>
+<span class="line">顶点缓冲区   -------&gt;   顶点着色器 ----&gt;  图元装配  ----&gt;  光栅器  -----&gt;  片元着色器</span>
+<span class="line"></span>
+<span class="line">                                                                         深度缓冲区</span>
+<span class="line">------&gt; 归属/剪裁测试 ------&gt; 多重采样，片段运算 ------&gt; 模板测试 -------&gt;  深度测试 -------&gt;  融合 --------&gt;  抖动 -------&gt; 颜色缓冲区</span>
+<span class="line"></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,3)]))}const d=n(i,[["render",t]]),g=JSON.parse('{"path":"/render/webgl/webgl%E7%9A%84%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B.html","title":"","lang":"en-US","frontmatter":{},"git":{},"filePathRelative":"render/webgl/webgl的渲染流程.md"}');export{d as comp,g as data};

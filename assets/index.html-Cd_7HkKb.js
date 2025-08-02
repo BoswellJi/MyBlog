@@ -1,0 +1,7 @@
+import{_ as e,c as s,b as n,o as i}from"./app-BfoDZ5rG.js";const l={};function t(r,a){return i(),s("div",null,a[0]||(a[0]=[n(`<h2 id="概述" tabindex="-1"><a class="header-anchor" href="#概述"><span>概述</span></a></h2><ul><li>链表的节点：</li></ul><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">function node(data,pre,next){</span>
+<span class="line">  this.data = data;</span>
+<span class="line">  this.pre = pre;</span>
+<span class="line">  this.next = next;</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="线性表结构" tabindex="-1"><a class="header-anchor" href="#线性表结构"><span>线性表结构</span></a></h2><ul><li><p>定义:</p></li><li><p>优势:</p><ul><li>增，删, 快;</li></ul></li><li><p>劣势:</p><ul><li>查慢;</li></ul></li><li><p>分类:</p></li></ul>`,5)]))}const c=e(l,[["render",t]]),d=JSON.parse('{"path":"/books/javascript/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95javascript%E6%8F%8F%E8%BF%B0/6%E9%93%BE%E8%A1%A8/","title":"","lang":"en-US","frontmatter":{},"git":{},"filePathRelative":"books/javascript/数据结构与算法javascript描述/6链表/readme.md"}');export{c as comp,d as data};
