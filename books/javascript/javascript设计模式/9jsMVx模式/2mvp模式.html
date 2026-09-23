@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.31" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <title>Hello, Boswell</title><meta name="description" content="Boswell's blog">
+    <link rel="preload" href="/MyBlog/assets/style-k9uwAu_g.css" as="style"><link rel="stylesheet" href="/MyBlog/assets/style-k9uwAu_g.css">
+    <link rel="modulepreload" href="/MyBlog/assets/app-umPNeXv7.js"><link rel="modulepreload" href="/MyBlog/assets/2mvp模式-DrAWjjlv.js">
+    
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container external-link-icon" vp-container><!--[--><header class="vp-navbar" vp-navbar><div class="vp-toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a class="route-link" href="/MyBlog/"><!----><span class="vp-site-name" aria-hidden="true">Hello, Boswell</span></a></span><div class="vp-navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button type="button" class="vp-toggle-color-mode-button" title="toggle color mode"><svg class="light-icon" viewbox="0 0 32 32" style=""><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg class="dark-icon" viewbox="0 0 32 32" style="display:none;"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="vp-sidebar-mask"></div><!--[--><aside class="vp-sidebar" vp-sidebar><!----><!--[--><!--]--><ul class="vp-sidebar-items"><!--[--><li><p tabindex="0" class="vp-sidebar-item vp-sidebar-heading"> <!----></p><!----></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="vp-page"><!--[--><!--]--><div vp-content><!--[--><!--]--><div id="content"><h2 id="mvp-model-view-presenter" tabindex="-1"><a class="header-anchor" href="#mvp-model-view-presenter"><span>MVP Model-view-presenter</span></a></h2><p>mvp是mvc设计模式的派生，它聚焦在改善展示逻辑上。在1990年初，它在一个叫做Taligent的公司被发明，当时他们正在为c++通用点环境开发模型。尽管mvc和mvp目的都是跨多组件的关注点分离，它们之间还是有一些基本的不同的。</p><p>对于这个总结的目的，我们将会聚焦在最适合web基础架构的mvp版本。</p><h2 id="models-views-presenters" tabindex="-1"><a class="header-anchor" href="#models-views-presenters"><span>Models,Views,Presenters</span></a></h2><p>mvp中的p表示呈现者。它是一个包含视图的用户接口业务逻辑的组件。不像mvc,调用视图被委托给呈现者，它从视图中解耦，而是通过接口与它对话。这个对所有有用的事情友好，比如：能够在单元测试中模拟视图。</p><p>mvp最常见的实现是使用一个包含没有逻辑的标题的被动视图。如果mvc和mvp不同，那是因为c和p做不同得事情。在mvp中，p观察models并且当models改变的时候更新views。p高效的绑定models到views,这是以前由mvc中的controllers持有的责任。</p><p>通过视图请求，表现者执行任何处理用户请求的工作，并且把数据回传给视图。在这个层面，他们保留数据，维护它以及和持久化数据的服务层进行交互（模型）。模型可能会触发事件，但是模型是订阅它们的表现者的角色以至于它能更新视图。在这个被动的架构中，我们没有直接数据绑定的概念。视图暴露了表现者能够用来设置数据的设置器（setters）。</p><p>mvc中的这个改变的好处是增加了我们应用程序的可测试性以及以及给视图和模型之间提供了一个更加干净的分离。但是这个不是没有代价的，因为在这个模式中缺少数据绑定的支持通常意味着必须关照这个分离的任务。</p><p>尽管被动视图的常用实现是用来实现一个界面的视图，也有不同的版本，包括事件的用法，它可以更能够从展现者中解耦视图。因为在js中我们没有界面结构，所以这里我们使用协议比使用一个显示的界面更多。从技术上讲，它仍然是一个api，并且从这个视角来看。称它为界面可能它对我们是公平的。</p><p>还有一个mvp的超级版本控制器变种，它更接近mvc和mvvm模式，因为它提供模型直接从视图中数据绑定。<code>键值观察(KVO)插件(如Derick Bailey的Backbone)。倾向于从被动视图中提取Backbone，更多地进入监督控制器或MVVM变体</code>。</p><h2 id="mvp或者mvc" tabindex="-1"><a class="header-anchor" href="#mvp或者mvc"><span>mvp或者mvc</span></a></h2><p>mvp一般最通常被用在企业级应用程序中，尽可能多的复用展现逻辑在其中是很必要的。非常复杂的视图的应用程序和大量用户交互可能发现这里mvc不太适合这个需求作为需要重度依赖多控制器的问题的解决方案。在mvp中，所有复杂逻辑都能够被封装到展现者中，它能够更好简化维护。</p><p>因为mvp视图通过界面被定义，以及技术上来说，界面只是系统和视图之间的联系人（除了展现者以外），这个模式还允许开发者编写展现逻辑，不需要等待设计者产出应用程序的布局和图形。</p><p>取决于实现，mvp或许比mvc更容易自动化单元测试。经常被引用的理由是展现者能够被用作完整的用户界面的模拟以及它能够独立于其他组件进行单元测试。在我的经验中，这个真的取决于我们实现mvp使用的语言（在js项目中选择mvp和asp.net选择mvp有很大不同。）</p><p>最终，考虑到mvc和mvp的之间的不同是语义上的，所以mvc担忧的问题，mvp可能同样会有。只要我们干净地分离关注到模型，视图和控制器（或者展现者）中，尽管我们选择变种，我们也能够获取相同的最大收益。</p><h2 id="mvc-mvp和backbone-js" tabindex="-1"><a class="header-anchor" href="#mvc-mvp和backbone-js"><span>mvc,mvp和backbone.js</span></a></h2><p>非常少的，如果任何架构js框架宣称使用它们经典格式实现mvc或者mvp模式，许多开发人员并不认为mvc和mvp是互斥的。（事实上，在我们了解像asp.net或者gwt的web框架时，更可能了解严格实现的mvp）。这是因为它能够有额外的展现者/视图逻辑在我们的应用程序中，但是仍然认为它是一种mvc的风格。</p><p>backbone贡献者赞同这种思维方式，当她将视图分离成各自不同的组成部分时，她需要一些东西来把它们组装起来。这可以是一个控制器路由，或者一个回调来响应正在获取的数据。</p><p>那就是说，不管怎样，一些开发者感觉backbone.js更适合mvp的描述比用mvc。他们的观点是这样：</p><ul><li>mvp中的展现者比控制器能更好的描述Backbone.View（在视图模板与绑定它的数据之间的层）</li><li>模型适合Backbone.Model（它和mvc中的模型根本不同）</li><li>试图最能代表模板</li></ul></div><!--[--><!--]--></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="vp-meta-item last-updated"><span class="meta-item-label">Last Updated: </span><time class="meta-item-info" datetime="2026-04-17T08:46:10.000Z" data-allow-mismatch>4/17/26, 4:46 PM</time></div><div class="vp-meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">jmz</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">Boswell</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">mingzhuang.ji</span><!----><!--]--><!--]--></span></div></div></footer><!----><!--[--><!--]--></main><!--]--></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/MyBlog/assets/app-umPNeXv7.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.31" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <title>Hello, Boswell</title><meta name="description" content="Boswell's blog">
+    <link rel="preload" href="/MyBlog/assets/style-k9uwAu_g.css" as="style"><link rel="stylesheet" href="/MyBlog/assets/style-k9uwAu_g.css">
+    <link rel="modulepreload" href="/MyBlog/assets/app-umPNeXv7.js"><link rel="modulepreload" href="/MyBlog/assets/1构造器模式-1fzbVpxD.js">
+    
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container external-link-icon" vp-container><!--[--><header class="vp-navbar" vp-navbar><div class="vp-toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a class="route-link" href="/MyBlog/"><!----><span class="vp-site-name" aria-hidden="true">Hello, Boswell</span></a></span><div class="vp-navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button type="button" class="vp-toggle-color-mode-button" title="toggle color mode"><svg class="light-icon" viewbox="0 0 32 32" style=""><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg class="dark-icon" viewbox="0 0 32 32" style="display:none;"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="vp-sidebar-mask"></div><!--[--><aside class="vp-sidebar" vp-sidebar><!----><!--[--><!--]--><ul class="vp-sidebar-items"><!--[--><li><p tabindex="0" class="vp-sidebar-item vp-sidebar-heading"> <!----></p><!----></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="vp-page"><!--[--><!--]--><div vp-content><!--[--><!--]--><div id="content"><p>在这章中，我们会探索许多即经典又现代化的设计模式的js实现。</p><p>开发者都想知道是否有一个理想的模式或者模式集，它们能够用在它们的工作流程中。这个问题没有唯一的答案；我们从事的每个脚本和应用程序可能都有自己独特的需求，而且我们需要思考模式在哪里可以为实现提供真正的价值。</p><p>例如，一些项目可能从观察者模式提供的解耦好处中获得收益（模式减少应用各部分之间与另外部分之间的依赖），尽管其他项目可能太小，没有解耦的必要。</p><p>就是说，一旦我们对设计模式问题有了充分把握以及它们最合适的特定问题，将他集成到我们的应用程序架构中，会变得非常容易。</p><p>这章，我们将探索的模式有：</p><ul><li>构造器模式</li><li>模块模式</li><li>揭示模块模式</li><li>单例模式</li><li>观察者模式</li><li>中介者模式</li><li>原型模式</li><li>命令模式</li><li>门面模式</li><li>工厂模式</li><li>混合模式</li><li>装饰者模式</li><li>享元模式</li></ul><p>构造器模式</p><p>在经典的面向对象编程语言中，一个构造器是一个特殊的方法，用于为新创建的对象分配内存后初始化它。js中，因为几乎一切都是对象，我们经常最感兴趣的是对象构造器。</p><p>对像构造器用于创建特定的对象类型。准备使用的对象和接受的参数，对象第一次创建时，构造函数用来设置成员属性和方法的值。</p><h2 id="对象创建" tabindex="-1"><a class="header-anchor" href="#对象创建"><span>对象创建</span></a></h2><p>js中，创建新对象的三种共同方式。如下：</p><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre><code class="language-javascript"><span class="line"><span class="token comment">// Each of the following options will create a new empty object:</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token keyword">var</span> newObject <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// or</span></span>
+<span class="line"><span class="token keyword">var</span> newObject <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span> <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// or</span></span>
+<span class="line"><span class="token keyword">var</span> newObject <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>其中最后案例中的，<code>Object</code>构造函数创建一个特定值的对象包装器，或者其中没有传值，它将创建一个空对象以及返回它。</p><p>之后，有四种键和值都赋给对象的方式：</p><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre><code class="language-javascript"><span class="line"><span class="token comment">// ECMAScript 3 compatible approaches</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// 1. Dot syntax</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// Set properties</span></span>
+<span class="line">newObject<span class="token punctuation">.</span>someKey <span class="token operator">=</span> <span class="token string">&quot;Hello World&quot;</span><span class="token punctuation">;</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// Get properties</span></span>
+<span class="line"><span class="token keyword">var</span> value <span class="token operator">=</span> newObject<span class="token punctuation">.</span>someKey<span class="token punctuation">;</span></span>
+<span class="line"> </span>
+<span class="line"> </span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// 2. Square bracket syntax</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// Set properties</span></span>
+<span class="line">newObject<span class="token punctuation">[</span><span class="token string">&quot;someKey&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;Hello World&quot;</span><span class="token punctuation">;</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// Get properties</span></span>
+<span class="line"><span class="token keyword">var</span> value <span class="token operator">=</span> newObject<span class="token punctuation">[</span><span class="token string">&quot;someKey&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="line"> </span>
+<span class="line"> </span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// ECMAScript 5 only compatible approaches</span></span>
+<span class="line"><span class="token comment">// For more information see: http://kangax.github.com/es5-compat-table/</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// 3. Object.defineProperty</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// Set properties</span></span>
+<span class="line">Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span> newObject<span class="token punctuation">,</span> <span class="token string">&quot;someKey&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">&quot;for more control of the property&#39;s behavior&quot;</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token literal-property property">writable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token literal-property property">enumerable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token literal-property property">configurable</span><span class="token operator">:</span> <span class="token boolean">true</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// If the above feels a little difficult to read, a short-hand could</span></span>
+<span class="line"><span class="token comment">// be written as follows:</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token keyword">var</span> <span class="token function-variable function">defineProp</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span> <span class="token parameter">obj<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value</span> <span class="token punctuation">)</span><span class="token punctuation">{</span></span>
+<span class="line">  <span class="token keyword">var</span> config <span class="token operator">=</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token literal-property property">value</span><span class="token operator">:</span> value<span class="token punctuation">,</span></span>
+<span class="line">    <span class="token literal-property property">writable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token literal-property property">enumerable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token literal-property property">configurable</span><span class="token operator">:</span> <span class="token boolean">true</span></span>
+<span class="line">  <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line">  Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span> obj<span class="token punctuation">,</span> key<span class="token punctuation">,</span> config <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// To use, we then create a new empty &quot;person&quot; object</span></span>
+<span class="line"><span class="token keyword">var</span> person <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span> <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// Populate the object with properties</span></span>
+<span class="line"><span class="token function">defineProp</span><span class="token punctuation">(</span> person<span class="token punctuation">,</span> <span class="token string">&quot;car&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Delorean&quot;</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token function">defineProp</span><span class="token punctuation">(</span> person<span class="token punctuation">,</span> <span class="token string">&quot;dateOfBirth&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;1981&quot;</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token function">defineProp</span><span class="token punctuation">(</span> person<span class="token punctuation">,</span> <span class="token string">&quot;hasBeard&quot;</span><span class="token punctuation">,</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"> </span>
+<span class="line">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token comment">// Outputs: Object {car: &quot;Delorean&quot;, dateOfBirth: &quot;1981&quot;, hasBeard: false}</span></span>
+<span class="line"> </span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// 4. Object.defineProperties</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// Set properties</span></span>
+<span class="line">Object<span class="token punctuation">.</span><span class="token function">defineProperties</span><span class="token punctuation">(</span> newObject<span class="token punctuation">,</span> <span class="token punctuation">{</span></span>
+<span class="line"> </span>
+<span class="line">  <span class="token string-property property">&quot;someKey&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">&quot;Hello World&quot;</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token literal-property property">writable</span><span class="token operator">:</span> <span class="token boolean">true</span></span>
+<span class="line">  <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line"> </span>
+<span class="line">  <span class="token string-property property">&quot;anotherKey&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">&quot;Foo bar&quot;</span><span class="token punctuation">,</span></span>
+<span class="line">    <span class="token literal-property property">writable</span><span class="token operator">:</span> <span class="token boolean">false</span></span>
+<span class="line">  <span class="token punctuation">}</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// Getting properties for 3. and 4. can be done using any of the</span></span>
+<span class="line"><span class="token comment">// options in 1. and 2.</span></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在这本书中，我们会看到一点，这些方法甚至可以被用于继承，如下：</p><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre><code class="language-javascript"><span class="line"><span class="token comment">// Usage:</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// Create a race car driver that inherits from the person object</span></span>
+<span class="line"><span class="token keyword">var</span> driver <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span> person <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// Set some properties for the driver</span></span>
+<span class="line"><span class="token function">defineProp</span><span class="token punctuation">(</span>driver<span class="token punctuation">,</span> <span class="token string">&quot;topSpeed&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;100mph&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// Get an inherited property (1981)</span></span>
+<span class="line">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> driver<span class="token punctuation">.</span>dateOfBirth <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// Get the property we set (100mph)</span></span>
+<span class="line">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> driver<span class="token punctuation">.</span>topSpeed <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>基础的构造器</p><p>像我们之前看到的，js不支持类的概念，但是它支持与对象一起工作的，特殊构造器函数。只需要在构造函数的调用前加上一个关键字，我们告诉js,我们想函数的行为像构造器，以及通过函数实例化有成员的新对象。</p><p>构造器内部，关键字this引用被创建的新对象，重新访问对象创建，一个基础的构造器可能看起来像这样：</p><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre><code class="language-javascript"><span class="line"><span class="token keyword">function</span> <span class="token function">Car</span><span class="token punctuation">(</span> <span class="token parameter">model<span class="token punctuation">,</span> year<span class="token punctuation">,</span> miles</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line"> </span>
+<span class="line">  <span class="token keyword">this</span><span class="token punctuation">.</span>model <span class="token operator">=</span> model<span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">this</span><span class="token punctuation">.</span>year <span class="token operator">=</span> year<span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">this</span><span class="token punctuation">.</span>miles <span class="token operator">=</span> miles<span class="token punctuation">;</span></span>
+<span class="line"> </span>
+<span class="line">  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">toString</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>model <span class="token operator">+</span> <span class="token string">&quot; has done &quot;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>miles <span class="token operator">+</span> <span class="token string">&quot; miles&quot;</span><span class="token punctuation">;</span></span>
+<span class="line">  <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// Usage:</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// We can create new instances of the car</span></span>
+<span class="line"><span class="token keyword">var</span> civic <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span> <span class="token string">&quot;Honda Civic&quot;</span><span class="token punctuation">,</span> <span class="token number">2009</span><span class="token punctuation">,</span> <span class="token number">20000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">var</span> mondeo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span> <span class="token string">&quot;Ford Mondeo&quot;</span><span class="token punctuation">,</span> <span class="token number">2010</span><span class="token punctuation">,</span> <span class="token number">5000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// and then open our browser console to view the</span></span>
+<span class="line"><span class="token comment">// output of the toString() method being called on</span></span>
+<span class="line"><span class="token comment">// these objects</span></span>
+<span class="line">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> civic<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> mondeo<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面是一个构造器模式的简单版本，但是存在一些问题。一个是它让继承很困难，另一个是像toString()这样的函数要为每个使用Car构造函数创建的的新对象重新定义，者是非常不理想的，因为，理想情况下，函数应该在Car类型的实例之间共享。</p><p>感谢地，因为有许多es3和es5兼容的替代品来构建对象，围绕这个限制工作是微不足道的。</p><h2 id="带有原型的构造器" tabindex="-1"><a class="header-anchor" href="#带有原型的构造器"><span>带有原型的构造器</span></a></h2><p>函数，就像js中的几乎所有对像一样。包含一个原型对象。我们调用一个js构造器来创建对象时，所有的构造器原型属性在新对象上可以获取到。照这样，能创建多个Car对象，它们可以访问一样的原型。因此，我们扩展原始案例，如下：</p><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre><code class="language-javascript"><span class="line"><span class="token keyword">function</span> <span class="token function">Car</span><span class="token punctuation">(</span> <span class="token parameter">model<span class="token punctuation">,</span> year<span class="token punctuation">,</span> miles</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line"> </span>
+<span class="line">  <span class="token keyword">this</span><span class="token punctuation">.</span>model <span class="token operator">=</span> model<span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">this</span><span class="token punctuation">.</span>year <span class="token operator">=</span> year<span class="token punctuation">;</span></span>
+<span class="line">  <span class="token keyword">this</span><span class="token punctuation">.</span>miles <span class="token operator">=</span> miles<span class="token punctuation">;</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token punctuation">}</span></span>
+<span class="line"> </span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// Note here that we are using Object.prototype.newMethod rather than</span></span>
+<span class="line"><span class="token comment">// Object.prototype so as to avoid redefining the prototype object</span></span>
+<span class="line"><span class="token class-name">Car</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">toString</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="line">  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>model <span class="token operator">+</span> <span class="token string">&quot; has done &quot;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>miles <span class="token operator">+</span> <span class="token string">&quot; miles&quot;</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token comment">// Usage:</span></span>
+<span class="line"> </span>
+<span class="line"><span class="token keyword">var</span> civic <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span> <span class="token string">&quot;Honda Civic&quot;</span><span class="token punctuation">,</span> <span class="token number">2009</span><span class="token punctuation">,</span> <span class="token number">20000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"><span class="token keyword">var</span> mondeo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span> <span class="token string">&quot;Ford Mondeo&quot;</span><span class="token punctuation">,</span> <span class="token number">2010</span><span class="token punctuation">,</span> <span class="token number">5000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"> </span>
+<span class="line">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> civic<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> mondeo<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>现在，上面，toString()的单个实例在所有的Car对象之间共享。</p></div><!--[--><!--]--></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="vp-meta-item last-updated"><span class="meta-item-label">Last Updated: </span><time class="meta-item-info" datetime="2026-04-17T08:46:10.000Z" data-allow-mismatch>4/17/26, 4:46 PM</time></div><div class="vp-meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: aiyoudqrjmz@163.com">j哥哥</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">jmz</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">Boswell</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">mingzhuang.ji</span><!----><!--]--><!--]--></span></div></div></footer><!----><!--[--><!--]--></main><!--]--></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/MyBlog/assets/app-umPNeXv7.js" defer></script>
+  </body>
+</html>

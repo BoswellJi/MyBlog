@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.31" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <title>Hello, Boswell</title><meta name="description" content="Boswell's blog">
+    <link rel="preload" href="/MyBlog/assets/style-k9uwAu_g.css" as="style"><link rel="stylesheet" href="/MyBlog/assets/style-k9uwAu_g.css">
+    <link rel="modulepreload" href="/MyBlog/assets/app-umPNeXv7.js"><link rel="modulepreload" href="/MyBlog/assets/24unicode和javascript-gqQUFW0g.js">
+    
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container external-link-icon" vp-container><!--[--><header class="vp-navbar" vp-navbar><div class="vp-toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a class="route-link" href="/MyBlog/"><!----><span class="vp-site-name" aria-hidden="true">Hello, Boswell</span></a></span><div class="vp-navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button type="button" class="vp-toggle-color-mode-button" title="toggle color mode"><svg class="light-icon" viewbox="0 0 32 32" style=""><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg class="dark-icon" viewbox="0 0 32 32" style="display:none;"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="vp-sidebar-mask"></div><!--[--><aside class="vp-sidebar" vp-sidebar><!----><!--[--><!--]--><ul class="vp-sidebar-items"><!--[--><li><p tabindex="0" class="vp-sidebar-item vp-sidebar-heading"> <!----></p><!----></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="vp-page"><!--[--><!--]--><div vp-content><!--[--><!--]--><div id="content"><h2 id="概述" tabindex="-1"><a class="header-anchor" href="#概述"><span>概述</span></a></h2><p>这章是unicode的简洁介绍并且如何在js中处理它。</p><h2 id="unicode历史" tabindex="-1"><a class="header-anchor" href="#unicode历史"><span>unicode历史</span></a></h2><p>unicode被三个人创建于1987年，目的是创建统一字符集，因为同时有许多编码普通文本不兼容的标准：许多8位ascll变种，big five(繁体中文)，GB2312（简体中文），等等。unicode之前，多语言纯文本没有标准存在，但是有允许你组合多编码的富文本系统。</p><p>第一个unicode草案题案在1988年发布。工作一直向前并且工作组一直扩展。unicode联盟在1991.3.1被合并。</p><p>unicode联盟是一个非盈利性的公司致力于开发，维护，推广软件国际化标准以及数据，尤其是unicode标准。</p><p>unicode1.0标准的第一卷在1991.10月被发布，以及1992年发布第二版。</p><h2 id="重要的unicode概念" tabindex="-1"><a class="header-anchor" href="#重要的unicode概念"><span>重要的unicode概念</span></a></h2><p>字符的概念可能看起来很简单，但是他有很多层意义。这就是为什么unicode是一个非常复杂的标准了。下面是重要的基础概念：</p><ul><li>字符和字母（字母：每种语言中组成语言的最小单位）</li></ul><p>有两个术语意思相当接近。字符是数字实体，而字母是书写语言的原子单位（字母表字母，中文字符）。程序员认为的字符，不是用户认为的字母。有时，几个字符被用于代表一个单独的字母。例如，我们能通过结合字符，生成字母。</p><ul><li>字形</li></ul><p>这是具体展示字母的方法。有时，相同的字母展示不同，取决于它的内容或者其他因素。例如，字母f和i能够被作为字形f,i展示，通过连带字形或者不连带字形来连接。</p><ul><li>码点</li></ul><p>unicode通过叫做码点的数字来代表它支持的字符。码点的16进制范围是0X0 到 0XFFFF。</p><ul><li>码单元</li></ul><p>为了存储或者传输码点，我们编码它们作为码单元，带有固定长度的数据块。长度用位来测量，并且通过编码模式来决定，unicode的编码有几种，例如utf-8,utf-16。名字中的数字表明码单元的长度，使用位。如果一个码点太大，无法装入一个代码单元，它必须被分解成多个单元。换句话说，码单元的数字需要代表能变异的单独码点。</p><ul><li>BOM(字节顺序标记byte order mark)</li><li>正规化</li><li>字符属性</li></ul><p>每一个unicode字符被规格指定了几个属性，其中的一些被列在这里：</p><ol><li>Name.</li><li>一般分类。</li><li>Age</li><li>Deprecated</li></ol><h2 id="码点" tabindex="-1"><a class="header-anchor" href="#码点"><span>码点</span></a></h2><h2 id="unicode编码" tabindex="-1"><a class="header-anchor" href="#unicode编码"><span>unicode编码</span></a></h2><h2 id="js源码和unicode" tabindex="-1"><a class="header-anchor" href="#js源码和unicode"><span>js源码和unicode</span></a></h2><ul><li>内部源码</li><li>外部源码</li></ul><h2 id="js字符串和unicode" tabindex="-1"><a class="header-anchor" href="#js字符串和unicode"><span>js字符串和unicode</span></a></h2><ul><li>转义序列</li><li>unicode规范化</li></ul><h2 id="js正则表达式和unicode" tabindex="-1"><a class="header-anchor" href="#js正则表达式和unicode"><span>js正则表达式和unicode</span></a></h2><ul><li>匹配任意码单元和任意码点</li><li>库</li><li>推荐阅读和章节来源</li></ul></div><!--[--><!--]--></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="vp-meta-item last-updated"><span class="meta-item-label">Last Updated: </span><time class="meta-item-info" datetime="2026-04-17T08:46:10.000Z" data-allow-mismatch>4/17/26, 4:46 PM</time></div><div class="vp-meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: aiyoudqrjmz@163.com">j哥哥</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">jmz</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">Boswell</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">mingzhuang.ji</span><!----><!--]--><!--]--></span></div></div></footer><!----><!--[--><!--]--></main><!--]--></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/MyBlog/assets/app-umPNeXv7.js" defer></script>
+  </body>
+</html>

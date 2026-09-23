@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.31" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <title>Hello, Boswell</title><meta name="description" content="Boswell's blog">
+    <link rel="preload" href="/MyBlog/assets/style-k9uwAu_g.css" as="style"><link rel="stylesheet" href="/MyBlog/assets/style-k9uwAu_g.css">
+    <link rel="modulepreload" href="/MyBlog/assets/app-umPNeXv7.js"><link rel="modulepreload" href="/MyBlog/assets/1.2算法问题求解基础-BQ1WxFjI.js">
+    
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container external-link-icon" vp-container><!--[--><header class="vp-navbar" vp-navbar><div class="vp-toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a class="route-link" href="/MyBlog/"><!----><span class="vp-site-name" aria-hidden="true">Hello, Boswell</span></a></span><div class="vp-navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button type="button" class="vp-toggle-color-mode-button" title="toggle color mode"><svg class="light-icon" viewbox="0 0 32 32" style=""><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg class="dark-icon" viewbox="0 0 32 32" style="display:none;"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="vp-sidebar-mask"></div><!--[--><aside class="vp-sidebar" vp-sidebar><!----><!--[--><!--]--><ul class="vp-sidebar-items"><!--[--><li><p tabindex="0" class="vp-sidebar-item vp-sidebar-heading"> <!----></p><!----></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="vp-page"><!--[--><!--]--><div vp-content><!--[--><!--]--><div id="content"><h2 id="概述" tabindex="-1"><a class="header-anchor" href="#概述"><span>概述</span></a></h2><ul><li>算法是问题的程序化解决方案;</li><li>解决方案本身并不是答案，而是获取答案的精确指令；</li><li>算法设计分析过程： <ol><li>理解问题</li><li>确定下面内容：计算方法，精确或近似解法，算法设计技术</li><li>设计算法</li><li>正确性证明</li><li>分析算法</li><li>根据算法写代码</li></ol></li></ul><h2 id="理解问题" tabindex="-1"><a class="header-anchor" href="#理解问题"><span>理解问题</span></a></h2><ul><li>对问题有完全的理解，仔细阅读问题描述，考虑特殊情况<code>边界值</code>；</li><li>算法的输入，确定了该算法所解决问题的一个实例；</li></ul><h2 id="了解计算机设备的性能" tabindex="-1"><a class="header-anchor" href="#了解计算机设备的性能"><span>了解计算机设备的性能</span></a></h2><ul><li>计算机体系结构<code>冯.诺依曼</code>；这个体系的根本在于<code>随机存取器RAM</code>；</li><li>并行计算，同一时间执行多条操作；</li><li>认识到计算机的<code>处理速度</code>和<code>存储限制</code>；</li></ul><h2 id="在精确解法和近似解法之间做出选择" tabindex="-1"><a class="header-anchor" href="#在精确解法和近似解法之间做出选择"><span>在精确解法和近似解法之间做出选择</span></a></h2><ul><li>精确算法与近似算法</li></ul><h2 id="算法的设计技术" tabindex="-1"><a class="header-anchor" href="#算法的设计技术"><span>算法的设计技术</span></a></h2><ul><li>也叫：策略，范例，是用<code>算法解题</code>的<code>一般性方法</code>，用于解决<code>不同计算领域</code>的多种问题；</li><li>根据内在设计理念对算法进行分类；</li></ul><h2 id="确定适当的数据结构" tabindex="-1"><a class="header-anchor" href="#确定适当的数据结构"><span>确定适当的数据结构</span></a></h2><ul><li>根据<code>算法执行的操作</code>为算法选择合适的<code>数据结构</code>；</li></ul><h2 id="算法的描述" tabindex="-1"><a class="header-anchor" href="#算法的描述"><span>算法的描述</span></a></h2><ul><li>文字描述算法的步骤以及伪代码描述</li></ul><h2 id="算法的正确性证明" tabindex="-1"><a class="header-anchor" href="#算法的正确性证明"><span>算法的正确性证明</span></a></h2><ul><li>一旦完成对算法的描述，就必须证明它的<code>正确性</code>；</li></ul><h2 id="算法的分析" tabindex="-1"><a class="header-anchor" href="#算法的分析"><span>算法的分析</span></a></h2><ul><li>除了正确性，最重要的特性就是<code>效率</code>了；</li><li>时间效率与空间效率；</li><li>简单性：算法的简单性，使得代码更容易读；</li><li>一般性：解决问题的一般性，接收输入的一般性；</li></ul><h2 id="为算法写代码" tabindex="-1"><a class="header-anchor" href="#为算法写代码"><span>为算法写代码</span></a></h2><ul><li>编译器可以优化算法效率；</li><li>一个好的算法，是不懈努力和反复修正的结果；</li><li>设计算法是一种<code>工程行为</code>，需要在资源有限的情况下，做权衡；</li></ul></div><!--[--><!--]--></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="vp-meta-item last-updated"><span class="meta-item-label">Last Updated: </span><time class="meta-item-info" datetime="2026-04-17T08:46:10.000Z" data-allow-mismatch>4/17/26, 4:46 PM</time></div><div class="vp-meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">jmz</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">Boswell</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">mingzhuang.ji</span><!----><!--]--><!--]--></span></div></div></footer><!----><!--[--><!--]--></main><!--]--></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/MyBlog/assets/app-umPNeXv7.js" defer></script>
+  </body>
+</html>

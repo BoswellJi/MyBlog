@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.31" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <title>Hello, Boswell</title><meta name="description" content="Boswell's blog">
+    <link rel="preload" href="/MyBlog/assets/style-k9uwAu_g.css" as="style"><link rel="stylesheet" href="/MyBlog/assets/style-k9uwAu_g.css">
+    <link rel="modulepreload" href="/MyBlog/assets/app-umPNeXv7.js"><link rel="modulepreload" href="/MyBlog/assets/1.4图形硬件介绍-znWxWf7M.js">
+    
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container external-link-icon" vp-container><!--[--><header class="vp-navbar" vp-navbar><div class="vp-toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a class="route-link" href="/MyBlog/"><!----><span class="vp-site-name" aria-hidden="true">Hello, Boswell</span></a></span><div class="vp-navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button type="button" class="vp-toggle-color-mode-button" title="toggle color mode"><svg class="light-icon" viewbox="0 0 32 32" style=""><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg class="dark-icon" viewbox="0 0 32 32" style="display:none;"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="vp-sidebar-mask"></div><!--[--><aside class="vp-sidebar" vp-sidebar><!----><!--[--><!--]--><ul class="vp-sidebar-items"><!--[--><li><p tabindex="0" class="vp-sidebar-item vp-sidebar-heading"> <!----></p><!----></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="vp-page"><!--[--><!--]--><div vp-content><!--[--><!--]--><div id="content"><h2 id="计算机系统的基本结构" tabindex="-1"><a class="header-anchor" href="#计算机系统的基本结构"><span>计算机系统的基本结构</span></a></h2><ul><li><code>应用程序</code> 运行在 <code>cpu</code> 上，并且使用 <code>主存RAM</code> ;</li><li>为了显示3D图形， <code>应用程序</code> 需要不断 <code>调用底层驱动程序</code> ， <code>驱动程序</code> 通过 <code>总线</code> 把 <code>图形数据</code> 发送到 <code>图形处理单元gpu</code> ；</li><li>cpu, 主存，总线，gpu, 显示器；</li></ul><h2 id="gpu的基本组成" tabindex="-1"><a class="header-anchor" href="#gpu的基本组成"><span>gpu的基本组成</span></a></h2><ul><li><p>webgl是一个低级api；建立在opengl es 2.0 之上； 因此 <code>WegGL与实际的图形硬件密切相关</code> ；</p></li><li><p>结构：</p><ol><li><p>GPU流水线;</p></li><li><p>帧缓存</p></li></ol><ul><li>Z-Buffer/深度缓冲区；</li><li>颜色缓存；</li><li>模板缓存；</li></ul><ol start="3"><li><p>纹理存储器</p></li><li><p>视频生成器</p></li></ol></li></ul><h2 id="gpu" tabindex="-1"><a class="header-anchor" href="#gpu"><span>GPU</span></a></h2><ul><li>专门设计的图形绘制设备，绘制输出在屏幕上的图像，GPU是高度并行化的，速度很快；</li><li>GPU: <code>采用流水线结构</code> , 数据从流水线的 <code>一个阶段</code> 传送到 <code>下一个阶段</code> ;</li><li>webgl: <code>图形流水线</code> 也是由多个阶段组成；他们与 <code>GPU物理流水线</code> 的各个阶段相对应；</li></ul><h2 id="帧缓存-这是gpu特性" tabindex="-1"><a class="header-anchor" href="#帧缓存-这是gpu特性"><span>帧缓存（这是GPU特性</span></a></h2><ul><li>对于简单的图形系统，通常是主存的一部分；</li><li>对于最新的图形系统，帧缓存属于专用的快速图形存储器，或者是靠近gpu一侧的单独存储芯片；</li><li><code>图形数据</code> 通过整个 <code>GPU流水线</code> 传送后，最后写到 <code>帧缓存</code> 中（framebuffer）;</li><li>是一个 <code>一个存储器</code> ，保存了最终显示在屏幕上图像的全部信息;</li><li>用作 <code>帧缓存</code> 的 <code>物理内存</code> 有几种不同的 <code>位置</code> ;</li><li>组成： <ul><li><p>颜色缓存</p><ul><li>通常保存了在某个时刻3d场景中，对观察者可见对象的颜色；</li><li>矩形阵列的存储器，以RGB或RGBA格式保存屏幕上每个像素的颜色；</li><li>颜色缓存为RGB每个颜色分量分配一定的位数，16位 24位 32位;</li><li>还会有一个alpha通道，表示每个像素的透明程度；</li></ul></li><li><p>Z-缓存</p><ul><li>Z-缓存：3D场景中，一个对象可能会被其他对象遮挡，整个场景绘制完成时，颜色缓存中不会有被隐藏对象的像素信息，这通常是由Z-缓存来实现的（也叫深度缓存;</li><li>Z-缓存中的每个单元，存储了距离观察者最近图元的距离；</li><li>用来处理场景中的深度问题；</li></ul></li><li><p>模板缓存</p><ul><li>最新的图形硬件还包含模板缓存，可以用来控制在颜色缓存的某个位置写入操作；（处理阴影;</li></ul></li></ul></li></ul><h2 id="纹理存储器" tabindex="-1"><a class="header-anchor" href="#纹理存储器"><span>纹理存储器</span></a></h2><ul><li>3D图形中，一个重要操作是把纹理应用于对象的表面，这些图像就是纹理，需要缓存保存它们，这样gpu可以快速有效的访问它们；</li><li>gpu有一个物理的 <code>纹理存储器</code> 用来 <code>存储纹理图像</code> ;</li></ul><h2 id="视频控制器" tabindex="-1"><a class="header-anchor" href="#视频控制器"><span>视频控制器</span></a></h2><ul><li>也叫视频生成器，以一定的频率逐行扫描颜色缓存，更新屏幕上的显示内容；</li><li>对于lcd显示器，整个屏幕 <code>每秒60次更新</code> ，也就是 <code>刷新率</code> 为 <code>60Hz</code> ；</li></ul></div><!--[--><!--]--></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="vp-meta-item last-updated"><span class="meta-item-label">Last Updated: </span><time class="meta-item-info" datetime="2026-04-17T08:46:10.000Z" data-allow-mismatch>4/17/26, 4:46 PM</time></div><div class="vp-meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">jmz</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">Boswell</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">mingzhuang.ji</span><!----><!--]--><!--]--></span></div></div></footer><!----><!--[--><!--]--></main><!--]--></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/MyBlog/assets/app-umPNeXv7.js" defer></script>
+  </body>
+</html>

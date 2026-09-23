@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.31" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <title>Hello, Boswell</title><meta name="description" content="Boswell's blog">
+    <link rel="preload" href="/MyBlog/assets/style-k9uwAu_g.css" as="style"><link rel="stylesheet" href="/MyBlog/assets/style-k9uwAu_g.css">
+    <link rel="modulepreload" href="/MyBlog/assets/app-umPNeXv7.js"><link rel="modulepreload" href="/MyBlog/assets/1.1计算机图形学的应用-BkVaAyPr.js">
+    
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container external-link-icon" vp-container><!--[--><header class="vp-navbar" vp-navbar><div class="vp-toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a class="route-link" href="/MyBlog/"><!----><span class="vp-site-name" aria-hidden="true">Hello, Boswell</span></a></span><div class="vp-navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button type="button" class="vp-toggle-color-mode-button" title="toggle color mode"><svg class="light-icon" viewbox="0 0 32 32" style=""><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg class="dark-icon" viewbox="0 0 32 32" style="display:none;"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="vp-sidebar-mask"></div><!--[--><aside class="vp-sidebar" vp-sidebar><!----><!--[--><!--]--><ul class="vp-sidebar-items"><!--[--><li><p tabindex="0" class="vp-sidebar-item vp-sidebar-heading"> <!----></p><!----></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="vp-page"><!--[--><!--]--><div vp-content><!--[--><!--]--><div id="content"><h2 id="概述" tabindex="-1"><a class="header-anchor" href="#概述"><span>概述</span></a></h2><ul><li><p>计算机图形学考虑的式用计算机生成图片或者图像的方方面面；</p></li><li><p>50年前，阴极射线管只能显示一些简单的直线段；图形学由此起步；</p></li><li><p>强调计算机图形学与手画或者拍照这些成像过程之间的联系；</p></li><li><p>用户的需求合软硬件技术的进步推动了计算机图形学的发展；</p></li><li><p>主要领域：</p><ul><li>信息的展示；</li><li>设计；</li><li>仿真和动画；</li><li>用户界面；</li></ul></li></ul><h2 id="信息的显示" tabindex="-1"><a class="header-anchor" href="#信息的显示"><span>信息的显示</span></a></h2><ul><li>传统的图形技术是作为人与人之间传递信息的媒介而出现；</li><li>现在地图可以在因特网上实时的显示和处理；</li><li>现代成像技术能够生成三维数据；</li></ul><h2 id="设计" tabindex="-1"><a class="header-anchor" href="#设计"><span>设计</span></a></h2><ul><li>工程和建筑;</li><li>交互式图形工具在计算机辅助设计CAD中的使用，建筑，机械，超大规模集成电路等设计；</li></ul><h2 id="仿真和动画" tabindex="-1"><a class="header-anchor" href="#仿真和动画"><span>仿真和动画</span></a></h2><ul><li>图形系统能够<code>实时生成复杂图像</code>时，研究人员就开始把它<code>用作模拟器</code>；一个例子就是训练飞行员；飞行模拟器；</li><li>飞行模拟器的成功，使得<code>计算机图形学</code>被广泛应用于电视，电影，和广告制作中；其成本远低于<code>传统手动动画绘制技术</code>；</li><li>虚拟现实vr，为计算机图形学开拓了许多新的应用空间；</li><li>头盔式显示器可以使人的左眼和右眼分别看到不同的图像，这样可以获得立体视觉效果；计算机还可以跟踪人体的位置和姿势，可能还包括头部和手指的姿态；还可能有其他的交互设备，包括力传感手套和声音定位设备等，这样，<code>人就可以作为由计算机生成场景的一部分</code>；人在虚拟场景中的活动仅仅受限于计算机生成图像的能力；</li></ul><h2 id="用户界面" tabindex="-1"><a class="header-anchor" href="#用户界面"><span>用户界面</span></a></h2><ul><li>现在我们已经对这些界面风格习以为常了，以至于忘记我们是在和计算机图形学打交道；</li></ul></div><!--[--><!--]--></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="vp-meta-item last-updated"><span class="meta-item-label">Last Updated: </span><time class="meta-item-info" datetime="2026-04-17T08:46:10.000Z" data-allow-mismatch>4/17/26, 4:46 PM</time></div><div class="vp-meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: aiyoudqrjmz@163.com">j哥哥</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">jmz</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">Boswell</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">mingzhuang.ji</span><!----><!--]--><!--]--></span></div></div></footer><!----><!--[--><!--]--></main><!--]--></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/MyBlog/assets/app-umPNeXv7.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.31" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <title>Hello, Boswell</title><meta name="description" content="Boswell's blog">
+    <link rel="preload" href="/MyBlog/assets/style-k9uwAu_g.css" as="style"><link rel="stylesheet" href="/MyBlog/assets/style-k9uwAu_g.css">
+    <link rel="modulepreload" href="/MyBlog/assets/app-umPNeXv7.js"><link rel="modulepreload" href="/MyBlog/assets/2.6运算符的二义性-BsFO2Hyf.js">
+    
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container external-link-icon" vp-container><!--[--><header class="vp-navbar" vp-navbar><div class="vp-toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a class="route-link" href="/MyBlog/"><!----><span class="vp-site-name" aria-hidden="true">Hello, Boswell</span></a></span><div class="vp-navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button type="button" class="vp-toggle-color-mode-button" title="toggle color mode"><svg class="light-icon" viewbox="0 0 32 32" style=""><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg class="dark-icon" viewbox="0 0 32 32" style="display:none;"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="vp-sidebar-mask"></div><!--[--><aside class="vp-sidebar" vp-sidebar><!----><!--[--><!--]--><ul class="vp-sidebar-items"><!--[--><li><p tabindex="0" class="vp-sidebar-item vp-sidebar-heading"> <!----></p><!----></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="vp-page"><!--[--><!--]--><div vp-content><!--[--><!--]--><div id="content"><h2 id="概述" tabindex="-1"><a class="header-anchor" href="#概述"><span>概述</span></a></h2><ul><li><p>js中, 很多运算符具有二义性, 一方面使得js更加灵活, 一方面使得js代码更显得难理解</p></li><li><p>根据语法规则，优先级算法，默认的系统机制，处理</p></li><li><p>为的是将语法更清晰的表达，因为运算符的二义性带来的是不清晰的语法；</p></li></ul><h2 id="二义性运算符的分类" tabindex="-1"><a class="header-anchor" href="#二义性运算符的分类"><span>二义性运算符的分类</span></a></h2><ul><li><p><code>,</code> :</p><ul><li>语法分隔符：参数分割符, 对象, 数组声明分隔符;</li><li>连续运算符：在<code>（）</code>强制运算符中作为运算符；</li><li><code>ctx = &#39;a = 1&#39;; eval(&#39;var &#39;+ ctx)</code>在语法解析期间可能会出现错误； 所以改为<code>eval(&#39;var &#39;+ name); eval(ctx)</code>;这里发生了语义上的根本改变， 从<code>表达式执行</code>变成了<code>变量语句声明</code>；</li></ul></li><li><p><code>+</code> :</p><ul><li>作用 <ul><li>字符串连接</li><li>数值取正值的一元运算符</li><li>数值逻辑表达式的求和运算 <ul><li>矛盾点在于处理将 <code>依赖数据类型</code> ;</li><li>脚本引擎不能根据运算符判断操作数的数据类型</li></ul></li></ul></li></ul></li><li><p><code>()</code> :</p><ul><li>作用： <ul><li>作为语句中的词法元素； <ul><li>参数列表</li></ul></li><li>传值参数表； <ul><li>new 构造函数参数</li></ul></li><li>子句中用来作为限定表达式的词法元素；这时的括号会有将表达式结果转为bool值的副作用； <ul><li>if(expression)</li></ul></li><li>用于强制表达式运算 <ul><li>typeof() (&#39;a&#39;,2)</li></ul></li><li>作为函数调用方法运算符 <ul><li>fn()</li></ul></li></ul></li><li>问题 <ul><li>()为运算符，只能处理运算元</li></ul></li></ul></li><li><p><code>:</code> :</p><ul><li>作用 <ul><li>直接量对象的成员声明；</li><li>标签声明；</li><li>switch中声明一个分支；</li><li>运算符的含义，再 <code>?:</code> 三元表达式中；</li></ul></li></ul></li><li><p><code>[]</code> :</p><ul><li>作用： <ul><li>可以用于声明数组；</li><li>可以是存取数组下标的运算符；</li></ul></li><li>用法： <ul><li><code>const arr = [[1][1]]; =》 const arr = [undefined]</code>,这里是没有语法错误的; <ul><li><code>[[1,2][1,2]]</code>: 1.逗号可以被认为是连续运算符； 2.第二个数组被认为是数组下标运算符；</li></ul></li></ul></li></ul></li><li><p><code>{}</code> :</p><ul><li>作用： <code>都是词法符号</code><ul><li>复合语句的符号；</li><li>if(true){name:1},会被优先理解为语句； =》 返回1， 因为语句是从左向右执行的； <ul><li>语句的语法分析，在时序上先于代码执行，所以表达式作为次级元素理解；</li><li>if(true){({name:1})},将会从右向左执行</li></ul></li><li>用于函数直接量声明时；</li><li>结构化异常处理的语法符号； <ul><li>try{}catch(err){}</li><li>复合语句的语法标识符，可以用单行语句来替换，结构化异常处理语法不可以，这是他们的重要区别；</li></ul></li></ul></li></ul></li><li><p><code>;</code> :</p></li></ul></div><!--[--><!--]--></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="vp-meta-item last-updated"><span class="meta-item-label">Last Updated: </span><time class="meta-item-info" datetime="2026-04-17T08:46:10.000Z" data-allow-mismatch>4/17/26, 4:46 PM</time></div><div class="vp-meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: aiyoudqrjmz@163.com">j哥哥</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">jmz</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">Boswell</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">mingzhuang.ji</span><!----><!--]--><!--]--></span></div></div></footer><!----><!--[--><!--]--></main><!--]--></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/MyBlog/assets/app-umPNeXv7.js" defer></script>
+  </body>
+</html>

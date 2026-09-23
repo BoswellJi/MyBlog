@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.31" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <title>AI Agent 技术入门与实践 | Hello, Boswell</title><meta name="description" content="Boswell's blog">
+    <link rel="preload" href="/MyBlog/assets/style-k9uwAu_g.css" as="style"><link rel="stylesheet" href="/MyBlog/assets/style-k9uwAu_g.css">
+    <link rel="modulepreload" href="/MyBlog/assets/app-umPNeXv7.js"><link rel="modulepreload" href="/MyBlog/assets/agent-DByfm5F9.js">
+    
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container external-link-icon" vp-container><!--[--><header class="vp-navbar" vp-navbar><div class="vp-toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a class="route-link" href="/MyBlog/"><!----><span class="vp-site-name" aria-hidden="true">Hello, Boswell</span></a></span><div class="vp-navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button type="button" class="vp-toggle-color-mode-button" title="toggle color mode"><svg class="light-icon" viewbox="0 0 32 32" style=""><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg class="dark-icon" viewbox="0 0 32 32" style="display:none;"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="vp-sidebar-mask"></div><!--[--><aside class="vp-sidebar" vp-sidebar><!----><!--[--><!--]--><ul class="vp-sidebar-items"><!--[--><li><p tabindex="0" class="vp-sidebar-item vp-sidebar-heading">AI Agent 技术入门与实践 <!----></p><!----></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="vp-page"><!--[--><!--]--><div vp-content><!--[--><!--]--><div id="content"><h1 id="ai-agent-技术入门与实践" tabindex="-1"><a class="header-anchor" href="#ai-agent-技术入门与实践"><span>AI Agent 技术入门与实践</span></a></h1><h2 id="什么是-ai-agent" tabindex="-1"><a class="header-anchor" href="#什么是-ai-agent"><span>什么是 AI Agent</span></a></h2><p>AI Agent 是一种能够感知环境、做出决策并执行行动的智能实体。它具备自主学习、规划和适应能力，可以在复杂环境中独立完成任务。</p><h3 id="agent-的核心特征" tabindex="-1"><a class="header-anchor" href="#agent-的核心特征"><span>Agent 的核心特征</span></a></h3><ul><li><strong>自主性</strong>：能够在没有人类干预的情况下独立运行</li><li><strong>感知能力</strong>：能够获取和理解环境信息</li><li><strong>决策能力</strong>：能够基于信息做出合理决策</li><li><strong>行动能力</strong>：能够执行决策并影响环境</li><li><strong>学习能力</strong>：能够从经验中学习和改进</li></ul><hr><h2 id="agent-的架构" tabindex="-1"><a class="header-anchor" href="#agent-的架构"><span>Agent 的架构</span></a></h2><h3 id="经典-agent-模型" tabindex="-1"><a class="header-anchor" href="#经典-agent-模型"><span>经典 Agent 模型</span></a></h3><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">┌─────────────────────────────────────────────────────────┐</span>
+<span class="line">│                      环境 (Environment)                 │</span>
+<span class="line">└─────────────────────────────────────────────────────────┘</span>
+<span class="line">                            ↑</span>
+<span class="line">                            │ 感知</span>
+<span class="line">                            ▼</span>
+<span class="line">┌─────────────────────────────────────────────────────────┐</span>
+<span class="line">│                  感知器 (Perceptor)                    │</span>
+<span class="line">└─────────────────────────────────────────────────────────┘</span>
+<span class="line">                            ↑</span>
+<span class="line">                            │ 状态</span>
+<span class="line">                            ▼</span>
+<span class="line">┌─────────────────────────────────────────────────────────┐</span>
+<span class="line">│                  推理引擎 (Reasoning Engine)           │</span>
+<span class="line">│  ┌─────────┐  ┌─────────┐  ┌─────────┐                │</span>
+<span class="line">│  │ 规划器  │→│ 决策器  │→│ 学习器  │                │</span>
+<span class="line">│  └─────────┘  └─────────┘  └─────────┘                │</span>
+<span class="line">└─────────────────────────────────────────────────────────┘</span>
+<span class="line">                            ↑</span>
+<span class="line">                            │ 动作</span>
+<span class="line">                            ▼</span>
+<span class="line">┌─────────────────────────────────────────────────────────┐</span>
+<span class="line">│                   执行器 (Actuator)                    │</span>
+<span class="line">└─────────────────────────────────────────────────────────┘</span>
+<span class="line">                            ↑</span>
+<span class="line">                            │ 影响</span>
+<span class="line">                            ▼</span>
+<span class="line">┌─────────────────────────────────────────────────────────┐</span>
+<span class="line">│                      环境 (Environment)                 │</span>
+<span class="line">└─────────────────────────────────────────────────────────┘</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="核心组件" tabindex="-1"><a class="header-anchor" href="#核心组件"><span>核心组件</span></a></h3><ol><li><strong>感知层</strong>：收集环境信息</li><li><strong>记忆层</strong>：存储历史经验和知识</li><li><strong>决策层</strong>：基于当前状态和目标做出决策</li><li><strong>执行层</strong>：执行具体动作</li><li><strong>反馈层</strong>：评估结果并学习</li></ol><hr><h2 id="agent-的类型" tabindex="-1"><a class="header-anchor" href="#agent-的类型"><span>Agent 的类型</span></a></h2><h3 id="按能力分类" tabindex="-1"><a class="header-anchor" href="#按能力分类"><span>按能力分类</span></a></h3><table><thead><tr><th>类型</th><th>描述</th><th>示例</th></tr></thead><tbody><tr><td><strong>反应式 Agent</strong></td><td>直接根据当前感知做出反应</td><td>简单的机器人避障</td></tr><tr><td><strong>慎思式 Agent</strong></td><td>基于内部模型进行推理和规划</td><td>下棋 AI</td></tr><tr><td><strong>混合式 Agent</strong></td><td>结合反应式和慎思式</td><td>自动驾驶汽车</td></tr><tr><td><strong>学习型 Agent</strong></td><td>能够从经验中学习</td><td>AlphaGo</td></tr></tbody></table><h3 id="按应用场景分类" tabindex="-1"><a class="header-anchor" href="#按应用场景分类"><span>按应用场景分类</span></a></h3><ul><li><strong>聊天机器人</strong>：对话交互</li><li><strong>任务型 Agent</strong>：完成特定任务</li><li><strong>创作型 Agent</strong>：生成内容</li><li><strong>研究型 Agent</strong>：数据分析和研究</li><li><strong>协作型 Agent</strong>：多 Agent 协作</li></ul><hr><h2 id="关键技术" tabindex="-1"><a class="header-anchor" href="#关键技术"><span>关键技术</span></a></h2><h3 id="_1-大语言模型-llm" tabindex="-1"><a class="header-anchor" href="#_1-大语言模型-llm"><span>1. 大语言模型 (LLM)</span></a></h3><p>作为 Agent 的核心大脑，提供自然语言理解和生成能力。</p><div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre><code class="language-python"><span class="line"><span class="token keyword">from</span> openai <span class="token keyword">import</span> OpenAI</span>
+<span class="line"></span>
+<span class="line">client <span class="token operator">=</span> OpenAI<span class="token punctuation">(</span>api_key<span class="token operator">=</span><span class="token string">&quot;your_api_key&quot;</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line"><span class="token keyword">def</span> <span class="token function">chat_with_agent</span><span class="token punctuation">(</span>prompt<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">    response <span class="token operator">=</span> client<span class="token punctuation">.</span>chat<span class="token punctuation">.</span>completions<span class="token punctuation">.</span>create<span class="token punctuation">(</span></span>
+<span class="line">        model<span class="token operator">=</span><span class="token string">&quot;gpt-4&quot;</span><span class="token punctuation">,</span></span>
+<span class="line">        messages<span class="token operator">=</span><span class="token punctuation">[</span></span>
+<span class="line">            <span class="token punctuation">{</span><span class="token string">&quot;role&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;system&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;content&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;你是一个智能助手&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="line">            <span class="token punctuation">{</span><span class="token string">&quot;role&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;user&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;content&quot;</span><span class="token punctuation">:</span> prompt<span class="token punctuation">}</span></span>
+<span class="line">        <span class="token punctuation">]</span></span>
+<span class="line">    <span class="token punctuation">)</span></span>
+<span class="line">    <span class="token keyword">return</span> response<span class="token punctuation">.</span>choices<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>message<span class="token punctuation">.</span>content</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-工具调用" tabindex="-1"><a class="header-anchor" href="#_2-工具调用"><span>2. 工具调用</span></a></h3><p>Agent 调用外部工具获取信息或执行操作。</p><div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre><code class="language-python"><span class="line"><span class="token keyword">from</span> langchain<span class="token punctuation">.</span>tools <span class="token keyword">import</span> GoogleSearchRun</span>
+<span class="line"><span class="token keyword">from</span> langchain<span class="token punctuation">.</span>agents <span class="token keyword">import</span> initialize_agent<span class="token punctuation">,</span> AgentType</span>
+<span class="line"><span class="token keyword">from</span> langchain<span class="token punctuation">.</span>chat_models <span class="token keyword">import</span> ChatOpenAI</span>
+<span class="line"></span>
+<span class="line">llm <span class="token operator">=</span> ChatOpenAI<span class="token punctuation">(</span>temperature<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span></span>
+<span class="line">search <span class="token operator">=</span> GoogleSearchRun<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">tools <span class="token operator">=</span> <span class="token punctuation">[</span>search<span class="token punctuation">]</span></span>
+<span class="line"></span>
+<span class="line">agent <span class="token operator">=</span> initialize_agent<span class="token punctuation">(</span></span>
+<span class="line">    tools<span class="token punctuation">,</span></span>
+<span class="line">    llm<span class="token punctuation">,</span></span>
+<span class="line">    agent<span class="token operator">=</span>AgentType<span class="token punctuation">.</span>CHAT_ZERO_SHOT_REACT_DESCRIPTION<span class="token punctuation">,</span></span>
+<span class="line">    verbose<span class="token operator">=</span><span class="token boolean">True</span></span>
+<span class="line"><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">agent<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token string">&quot;今天的天气怎么样？&quot;</span><span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-长期记忆" tabindex="-1"><a class="header-anchor" href="#_3-长期记忆"><span>3. 长期记忆</span></a></h3><p>存储和检索历史对话信息。</p><div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre><code class="language-python"><span class="line"><span class="token keyword">from</span> langchain<span class="token punctuation">.</span>memory <span class="token keyword">import</span> ConversationBufferMemory</span>
+<span class="line"></span>
+<span class="line">memory <span class="token operator">=</span> ConversationBufferMemory<span class="token punctuation">(</span>memory_key<span class="token operator">=</span><span class="token string">&quot;chat_history&quot;</span><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">agent <span class="token operator">=</span> initialize_agent<span class="token punctuation">(</span></span>
+<span class="line">    tools<span class="token punctuation">,</span></span>
+<span class="line">    llm<span class="token punctuation">,</span></span>
+<span class="line">    agent<span class="token operator">=</span>AgentType<span class="token punctuation">.</span>CHAT_CONVERSATIONAL_REACT_DESCRIPTION<span class="token punctuation">,</span></span>
+<span class="line">    memory<span class="token operator">=</span>memory<span class="token punctuation">,</span></span>
+<span class="line">    verbose<span class="token operator">=</span><span class="token boolean">True</span></span>
+<span class="line"><span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-规划与推理" tabindex="-1"><a class="header-anchor" href="#_4-规划与推理"><span>4. 规划与推理</span></a></h3><p>将复杂任务分解为子任务并制定执行计划。</p><div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre><code class="language-python"><span class="line"><span class="token keyword">from</span> langchain<span class="token punctuation">.</span>chains <span class="token keyword">import</span> LLMChain</span>
+<span class="line"><span class="token keyword">from</span> langchain<span class="token punctuation">.</span>prompts <span class="token keyword">import</span> PromptTemplate</span>
+<span class="line"></span>
+<span class="line">planning_prompt <span class="token operator">=</span> PromptTemplate<span class="token punctuation">(</span></span>
+<span class="line">    input_variables<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&quot;task&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span></span>
+<span class="line">    template<span class="token operator">=</span><span class="token string">&quot;将以下任务分解为子任务：{task}&quot;</span></span>
+<span class="line"><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">planning_chain <span class="token operator">=</span> LLMChain<span class="token punctuation">(</span>llm<span class="token operator">=</span>llm<span class="token punctuation">,</span> prompt<span class="token operator">=</span>planning_prompt<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">tasks <span class="token operator">=</span> planning_chain<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token string">&quot;写一篇关于人工智能的文章&quot;</span><span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr><h2 id="典型应用场景" tabindex="-1"><a class="header-anchor" href="#典型应用场景"><span>典型应用场景</span></a></h2><h3 id="_1-智能客服" tabindex="-1"><a class="header-anchor" href="#_1-智能客服"><span>1. 智能客服</span></a></h3><div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre><code class="language-python"><span class="line"><span class="token keyword">class</span> <span class="token class-name">CustomerServiceAgent</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">        self<span class="token punctuation">.</span>llm <span class="token operator">=</span> ChatOpenAI<span class="token punctuation">(</span>temperature<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span></span>
+<span class="line">        self<span class="token punctuation">.</span>knowledge_base <span class="token operator">=</span> load_knowledge_base<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">    </span>
+<span class="line">    <span class="token keyword">def</span> <span class="token function">respond</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> user_query<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">        <span class="token comment"># 检索知识库</span></span>
+<span class="line">        relevant_info <span class="token operator">=</span> self<span class="token punctuation">.</span>knowledge_base<span class="token punctuation">.</span>search<span class="token punctuation">(</span>user_query<span class="token punctuation">)</span></span>
+<span class="line">        </span>
+<span class="line">        <span class="token comment"># 生成回复</span></span>
+<span class="line">        response <span class="token operator">=</span> self<span class="token punctuation">.</span>llm<span class="token punctuation">.</span>generate<span class="token punctuation">(</span></span>
+<span class="line">            <span class="token string-interpolation"><span class="token string">f&quot;基于以下信息回答问题：</span><span class="token interpolation"><span class="token punctuation">{</span>relevant_info<span class="token punctuation">}</span></span><span class="token string">\n问题：</span><span class="token interpolation"><span class="token punctuation">{</span>user_query<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span></span>
+<span class="line">        <span class="token punctuation">)</span></span>
+<span class="line">        </span>
+<span class="line">        <span class="token keyword">return</span> response</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-代码助手" tabindex="-1"><a class="header-anchor" href="#_2-代码助手"><span>2. 代码助手</span></a></h3><div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre><code class="language-python"><span class="line"><span class="token keyword">class</span> <span class="token class-name">CodeAgent</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">        self<span class="token punctuation">.</span>llm <span class="token operator">=</span> ChatOpenAI<span class="token punctuation">(</span>model<span class="token operator">=</span><span class="token string">&quot;gpt-4&quot;</span><span class="token punctuation">)</span></span>
+<span class="line">    </span>
+<span class="line">    <span class="token keyword">def</span> <span class="token function">generate_code</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> requirements<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">        prompt <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f&quot;&quot;&quot;</span>
+<span class="line">        根据需求生成代码：</span>
+<span class="line">        </span><span class="token interpolation"><span class="token punctuation">{</span>requirements<span class="token punctuation">}</span></span><span class="token string"></span>
+<span class="line">        </span>
+<span class="line">        请提供：</span>
+<span class="line">        1. 完整代码</span>
+<span class="line">        2. 代码解释</span>
+<span class="line">        3. 使用示例</span>
+<span class="line">        &quot;&quot;&quot;</span></span></span>
+<span class="line">        </span>
+<span class="line">        <span class="token keyword">return</span> self<span class="token punctuation">.</span>llm<span class="token punctuation">.</span>generate<span class="token punctuation">(</span>prompt<span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-数据分析" tabindex="-1"><a class="header-anchor" href="#_3-数据分析"><span>3. 数据分析</span></a></h3><div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre><code class="language-python"><span class="line"><span class="token keyword">class</span> <span class="token class-name">DataAnalysisAgent</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">        self<span class="token punctuation">.</span>llm <span class="token operator">=</span> ChatOpenAI<span class="token punctuation">(</span>model<span class="token operator">=</span><span class="token string">&quot;gpt-4&quot;</span><span class="token punctuation">)</span></span>
+<span class="line">        self<span class="token punctuation">.</span>python_executor <span class="token operator">=</span> PythonExecutor<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">    </span>
+<span class="line">    <span class="token keyword">def</span> <span class="token function">analyze</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> data<span class="token punctuation">,</span> question<span class="token punctuation">)</span><span class="token punctuation">:</span></span>
+<span class="line">        <span class="token comment"># 生成分析代码</span></span>
+<span class="line">        code_prompt <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f&quot;编写Python代码分析以下数据：</span><span class="token interpolation"><span class="token punctuation">{</span>data<span class="token punctuation">}</span></span><span class="token string">\n问题：</span><span class="token interpolation"><span class="token punctuation">{</span>question<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span></span>
+<span class="line">        code <span class="token operator">=</span> self<span class="token punctuation">.</span>llm<span class="token punctuation">.</span>generate<span class="token punctuation">(</span>code_prompt<span class="token punctuation">)</span></span>
+<span class="line">        </span>
+<span class="line">        <span class="token comment"># 执行代码</span></span>
+<span class="line">        result <span class="token operator">=</span> self<span class="token punctuation">.</span>python_executor<span class="token punctuation">.</span>run<span class="token punctuation">(</span>code<span class="token punctuation">)</span></span>
+<span class="line">        </span>
+<span class="line">        <span class="token comment"># 解释结果</span></span>
+<span class="line">        explanation <span class="token operator">=</span> self<span class="token punctuation">.</span>llm<span class="token punctuation">.</span>generate<span class="token punctuation">(</span></span>
+<span class="line">            <span class="token string-interpolation"><span class="token string">f&quot;解释以下分析结果：</span><span class="token interpolation"><span class="token punctuation">{</span>result<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span></span>
+<span class="line">        <span class="token punctuation">)</span></span>
+<span class="line">        </span>
+<span class="line">        <span class="token keyword">return</span> explanation</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr><h2 id="开发框架" tabindex="-1"><a class="header-anchor" href="#开发框架"><span>开发框架</span></a></h2><h3 id="langchain" tabindex="-1"><a class="header-anchor" href="#langchain"><span>LangChain</span></a></h3><div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre><code class="language-python"><span class="line"><span class="token keyword">from</span> langchain <span class="token keyword">import</span> OpenAI<span class="token punctuation">,</span> LLMMathChain</span>
+<span class="line"></span>
+<span class="line">llm <span class="token operator">=</span> OpenAI<span class="token punctuation">(</span>temperature<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span></span>
+<span class="line">math_chain <span class="token operator">=</span> LLMMathChain<span class="token punctuation">.</span>from_llm<span class="token punctuation">(</span>llm<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">result <span class="token operator">=</span> math_chain<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token string">&quot;25的平方根是多少？&quot;</span><span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="llamaindex" tabindex="-1"><a class="header-anchor" href="#llamaindex"><span>LlamaIndex</span></a></h3><div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre><code class="language-python"><span class="line"><span class="token keyword">from</span> llama_index <span class="token keyword">import</span> GPTVectorStoreIndex<span class="token punctuation">,</span> SimpleDirectoryReader</span>
+<span class="line"></span>
+<span class="line">documents <span class="token operator">=</span> SimpleDirectoryReader<span class="token punctuation">(</span><span class="token string">&quot;data/&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>load_data<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">index <span class="token operator">=</span> GPTVectorStoreIndex<span class="token punctuation">.</span>from_documents<span class="token punctuation">(</span>documents<span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">query_engine <span class="token operator">=</span> index<span class="token punctuation">.</span>as_query_engine<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line">response <span class="token operator">=</span> query_engine<span class="token punctuation">.</span>query<span class="token punctuation">(</span><span class="token string">&quot;文档中提到了什么？&quot;</span><span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="autogpt" tabindex="-1"><a class="header-anchor" href="#autogpt"><span>AutoGPT</span></a></h3><div class="language-python line-numbers-mode" data-highlighter="prismjs" data-ext="py"><pre><code class="language-python"><span class="line"><span class="token keyword">from</span> autogpt <span class="token keyword">import</span> AutoGPT</span>
+<span class="line"></span>
+<span class="line">agent <span class="token operator">=</span> AutoGPT<span class="token punctuation">(</span></span>
+<span class="line">    name<span class="token operator">=</span><span class="token string">&quot;我的智能助手&quot;</span><span class="token punctuation">,</span></span>
+<span class="line">    role<span class="token operator">=</span><span class="token string">&quot;任务执行者&quot;</span><span class="token punctuation">,</span></span>
+<span class="line">    goals<span class="token operator">=</span><span class="token punctuation">[</span></span>
+<span class="line">        <span class="token string">&quot;完成用户指定的任务&quot;</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token string">&quot;保持沟通顺畅&quot;</span><span class="token punctuation">,</span></span>
+<span class="line">        <span class="token string">&quot;持续学习和改进&quot;</span></span>
+<span class="line">    <span class="token punctuation">]</span></span>
+<span class="line"><span class="token punctuation">)</span></span>
+<span class="line"></span>
+<span class="line">agent<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr><h2 id="挑战与展望" tabindex="-1"><a class="header-anchor" href="#挑战与展望"><span>挑战与展望</span></a></h2><h3 id="当前挑战" tabindex="-1"><a class="header-anchor" href="#当前挑战"><span>当前挑战</span></a></h3><ol><li><strong>上下文理解</strong>：长对话中的上下文保持</li><li><strong>工具使用</strong>：正确选择和调用工具</li><li><strong>可靠性</strong>：避免幻觉和错误输出</li><li><strong>安全性</strong>：防止恶意使用</li><li><strong>资源消耗</strong>：计算成本和响应时间</li></ol><h3 id="未来方向" tabindex="-1"><a class="header-anchor" href="#未来方向"><span>未来方向</span></a></h3><ol><li><strong>多模态能力</strong>：处理文本、图像、语音等多种输入</li><li><strong>长期记忆</strong>：更高效的记忆管理和检索</li><li><strong>多 Agent 协作</strong>：多个 Agent 协同完成复杂任务</li><li><strong>领域专业化</strong>：针对特定领域优化的 Agent</li><li><strong>边缘部署</strong>：在设备端运行轻量级 Agent</li></ol><hr><h2 id="实践建议" tabindex="-1"><a class="header-anchor" href="#实践建议"><span>实践建议</span></a></h2><h3 id="开发步骤" tabindex="-1"><a class="header-anchor" href="#开发步骤"><span>开发步骤</span></a></h3><ol><li><strong>定义目标</strong>：明确 Agent 的用途和边界</li><li><strong>选择框架</strong>：根据需求选择合适的工具</li><li><strong>设计流程</strong>：规划 Agent 的工作流程</li><li><strong>集成工具</strong>：连接必要的外部服务</li><li><strong>测试优化</strong>：迭代测试并改进性能</li></ol><h3 id="最佳实践" tabindex="-1"><a class="header-anchor" href="#最佳实践"><span>最佳实践</span></a></h3><ul><li><strong>保持简洁</strong>：避免过度复杂的逻辑</li><li><strong>透明可解释</strong>：让用户理解 Agent 的决策过程</li><li><strong>容错设计</strong>：处理异常情况和错误</li><li><strong>持续监控</strong>：跟踪性能和用户反馈</li></ul><hr><h2 id="资源推荐" tabindex="-1"><a class="header-anchor" href="#资源推荐"><span>资源推荐</span></a></h2><h3 id="学习资料" tabindex="-1"><a class="header-anchor" href="#学习资料"><span>学习资料</span></a></h3><ul><li><strong>书籍</strong>：《人工智能：一种现代方法》</li><li><strong>课程</strong>：Coursera AI 课程</li><li><strong>文档</strong>：LangChain、LlamaIndex 官方文档</li></ul><h3 id="工具" tabindex="-1"><a class="header-anchor" href="#工具"><span>工具</span></a></h3><ul><li><strong>LLM 平台</strong>：OpenAI、Anthropic、Google</li><li><strong>框架</strong>：LangChain、LlamaIndex、AutoGPT</li><li><strong>向量数据库</strong>：Pinecone、Chroma、FAISS</li></ul><hr><h2 id="总结" tabindex="-1"><a class="header-anchor" href="#总结"><span>总结</span></a></h2><p>AI Agent 代表了人工智能的下一个发展阶段，它将大语言模型的能力与工具使用、规划推理相结合，能够自主完成复杂任务。随着技术的不断进步，Agent 将在更多领域发挥重要作用，改变我们的工作和生活方式。</p><blockquote><p>&quot;The best way to predict the future is to create it.&quot; - Peter Drucker</p></blockquote></div><!--[--><!--]--></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="vp-meta-item last-updated"><span class="meta-item-label">Last Updated: </span><time class="meta-item-info" datetime="2026-06-03T11:17:22.000Z" data-allow-mismatch>6/3/26, 7:17 PM</time></div><div class="vp-meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">mingzhuang.ji</span><!----><!--]--><!--]--></span></div></div></footer><!----><!--[--><!--]--></main><!--]--></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/MyBlog/assets/app-umPNeXv7.js" defer></script>
+  </body>
+</html>

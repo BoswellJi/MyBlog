@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.31" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <title>Hello, Boswell</title><meta name="description" content="Boswell's blog">
+    <link rel="preload" href="/MyBlog/assets/style-k9uwAu_g.css" as="style"><link rel="stylesheet" href="/MyBlog/assets/style-k9uwAu_g.css">
+    <link rel="modulepreload" href="/MyBlog/assets/app-umPNeXv7.js"><link rel="modulepreload" href="/MyBlog/assets/5.2动态执行-BiW7oyLV.js">
+    
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container external-link-icon" vp-container><!--[--><header class="vp-navbar" vp-navbar><div class="vp-toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a class="route-link" href="/MyBlog/"><!----><span class="vp-site-name" aria-hidden="true">Hello, Boswell</span></a></span><div class="vp-navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button type="button" class="vp-toggle-color-mode-button" title="toggle color mode"><svg class="light-icon" viewbox="0 0 32 32" style=""><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg class="dark-icon" viewbox="0 0 32 32" style="display:none;"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="vp-sidebar-mask"></div><!--[--><aside class="vp-sidebar" vp-sidebar><!----><!--[--><!--]--><ul class="vp-sidebar-items"><!--[--><li><p tabindex="0" class="vp-sidebar-item vp-sidebar-heading"> <!----></p><!----></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="vp-page"><!--[--><!--]--><div vp-content><!--[--><!--]--><div id="content"><h2 id="动态特性" tabindex="-1"><a class="header-anchor" href="#动态特性"><span>动态特性</span></a></h2><ul><li><p>解释而非编译</p></li><li><p>可以重写标识符</p></li><li><p>动态类型系统</p></li><li><p>动态执行</p></li><li><p>丰富的数据外部表示</p></li></ul><h2 id="动态执行系统分为两个阶段" tabindex="-1"><a class="header-anchor" href="#动态执行系统分为两个阶段"><span>动态执行系统分为两个阶段:</span></a></h2><ul><li><p>动态装载</p></li><li><p>动态执行(eval)</p><ul><li>主要是由eval带来的效果</li></ul></li></ul><p><em>某些系统可能会将两个操作合二为一, 装载之后, 直接动态执行</em></p><h3 id="动态执行与闭包" tabindex="-1"><a class="header-anchor" href="#动态执行与闭包"><span>动态执行与闭包</span></a></h3><ul><li><p>js的代码总是运行在闭包中, 会有一个scriptobject, 用来访问当前闭包中的变量表, 与内嵌函数表, 通过parent属性访问到外层闭包;</p></li><li><p>系统全局闭包, 当前函数闭包, eval的代码准备哪个闭包;</p></li><li><p>eval是js的全局对象global提供的方法, 如果要访问global对象, 可以通过宿主对象, 浏览器环境中是window;</p></li><li><p>eval的闭包, 在moz中是全局闭包, 在ie位函数闭包; 源于对eval使用的闭包环境的理解并不相同;</p></li></ul><h3 id="eval使用全局闭包" tabindex="-1"><a class="header-anchor" href="#eval使用全局闭包"><span>eval使用全局闭包</span></a></h3><ul><li><p>spiderMonkey中使用eval执行代码改变的是函数闭包</p><ul><li>window.eval改变的是全局闭包;</li></ul></li><li><p>允许eval使用全局闭包并不是好主意, 不应当让eval对函数外产生副作用;</p><ul><li>在jsscript中window.execScript方法中执行的代码总是在全局闭包中执行;</li></ul></li></ul><h3 id="eval使用当前函数的闭包" tabindex="-1"><a class="header-anchor" href="#eval使用当前函数的闭包"><span>eval使用当前函数的闭包</span></a></h3><ul><li><p>eval代码中允许声明局部变量, 那就必须保证语法树能在eval过程中动态维护;</p></li><li><p>js代码解释执行的过程:</p><ul><li>js代码文本解释为语法树, 然后按照语法树来执行;</li><li>将语法树中与该函数有关的 <code>形式参数</code> , <code>函数局部变量</code> , <code>upvalue</code> , <code>内层的嵌套</code> 等信息, 复制到一个结构中, <em>scriptObject</em></li><li>执行函数体中的代码, 需要访问变量时, 先考察 <code>scriptObject</code> 中的局部变量, 最后考察 <code>upvalue</code></li></ul></li></ul><h3 id="动态执行过程中的语句-表达式和值" tabindex="-1"><a class="header-anchor" href="#动态执行过程中的语句-表达式和值"><span>动态执行过程中的语句, 表达式和值</span></a></h3><ul><li><p>eval是一个动态的语句执行系统, 不是动态的取值/赋值系统</p></li><li><p>eval将 <code>{name:&#39;js&#39;}</code> 中的一对大括号视为一个复合语句的标识, 但是对于 <code>{name:&#39;jmz&#39;,age:12}</code> 中的age后的 <code>:</code> 不能很好的解析;</p><ul><li>解决这个问题的方式就是 <code>eval(&#39;({name:&quot;js&quot;})&#39;)</code></li></ul></li></ul><h3 id="奇特的-甚至是负面的影响" tabindex="-1"><a class="header-anchor" href="#奇特的-甚至是负面的影响"><span>奇特的, 甚至是负面的影响</span></a></h3><ul><li><p>导致变量作用域发生变化;</p></li><li><p>js代码不可编译的性质, 也是由动态执行导致的; 支持动态执行的代码, 是不能真实编译的;</p><ul><li>真实编译指的是编译为二进制的 <code>机器代码</code> ;</li><li>不是某种支持动态执行的 <code>虚拟机环境</code> 中的中间代码;</li></ul></li></ul></div><!--[--><!--]--></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="vp-meta-item last-updated"><span class="meta-item-label">Last Updated: </span><time class="meta-item-info" datetime="2026-04-17T08:46:10.000Z" data-allow-mismatch>4/17/26, 4:46 PM</time></div><div class="vp-meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: aiyoudqrjmz@163.com">j哥哥</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">jmz</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">Boswell</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">mingzhuang.ji</span><!----><!--]--><!--]--></span></div></div></footer><!----><!--[--><!--]--></main><!--]--></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/MyBlog/assets/app-umPNeXv7.js" defer></script>
+  </body>
+</html>

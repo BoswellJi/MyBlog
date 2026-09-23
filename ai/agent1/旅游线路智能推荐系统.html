@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.31" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <title>旅游线路智能推荐系统 | Hello, Boswell</title><meta name="description" content="Boswell's blog">
+    <link rel="preload" href="/MyBlog/assets/style-k9uwAu_g.css" as="style"><link rel="stylesheet" href="/MyBlog/assets/style-k9uwAu_g.css">
+    <link rel="modulepreload" href="/MyBlog/assets/app-umPNeXv7.js"><link rel="modulepreload" href="/MyBlog/assets/旅游线路智能推荐系统-FkQLADhV.js">
+    
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container no-navbar no-sidebar external-link-icon" vp-container><!--[--><!----><!--]--><div class="vp-sidebar-mask"></div><!--[--><aside class="vp-sidebar" vp-sidebar><!----><!--[--><!--]--><!----><!--[--><!--]--></aside><!--]--><!--[--><main class="vp-page"><!--[--><!--]--><div vp-content><!--[--><!--]--><div id="content"><h1 id="旅游线路智能推荐系统" tabindex="-1"><a class="header-anchor" href="#旅游线路智能推荐系统"><span>旅游线路智能推荐系统</span></a></h1><h2 id="背景" tabindex="-1"><a class="header-anchor" href="#背景"><span>背景</span></a></h2><p>之前旅仓 H5 列表页中上线过一段时间的线路推荐模块，但本质上还是业务在后台手动维护数据。这样做有两个明显问题：</p><ul><li>每次都需要人工更新</li><li>很难真正体现用户的个性化偏好</li></ul><p>所以我在想，能不能换一个角度，不把它只看成传统的推荐模块，而是把它理解成一个基于用户行为持续感知和响应的旅游线路智能推荐系统，应用在多个场景。</p><h2 id="思路" tabindex="-1"><a class="header-anchor" href="#思路"><span>思路</span></a></h2><p>核心想法是：可以尝试用 agent 的视角重新理解旅游推荐这件事。 agent 的行为通常取决于两部分：</p><ul><li>当前输入，也就是 prompt</li><li>历史信息和环境状态，也就是 context</li></ul><p>放到旅游场景里，可以做一个比较自然的映射。</p><h3 id="_1-上下文-context" tabindex="-1"><a class="header-anchor" href="#_1-上下文-context"><span>1. 上下文 context</span></a></h3><p>用户的过往数据可以看成是一个持续更新的 context，例如：</p><ul><li>浏览过哪些线路</li><li>搜索过哪些关键词</li><li>点击过哪些城市、主题或筛选条件</li><li>是否下单、加购或停留较久</li></ul><p>这些信息并不是一次性的，而是在用户每一次访问、每一次点击之后都在变化。因此，用户画像不是静态的，而是一个不断更新的上下文。</p><h3 id="_2-提示词-prompt" tabindex="-1"><a class="header-anchor" href="#_2-提示词-prompt"><span>2. 提示词 prompt</span></a></h3><p>用户当前这一刻的输入和交互，可以类比为 prompt，或者说是当前意图的直接信号。例如：</p><ul><li>用户输入了一个搜索关键词</li><li>用户点击了某个目的地</li><li>用户在页面上切换了出发地、日期、价格区间</li><li>用户点进了一条具体线路</li></ul><p>这些动作不一定是严格意义上的 prompt，但都可以理解为“用户此刻想要什么”的即时表达。</p><h3 id="_3-持续的-agent-行为" tabindex="-1"><a class="header-anchor" href="#_3-持续的-agent-行为"><span>3. 持续的 agent 行为</span></a></h3><p>在这个框架下，推荐系统的行为就不只是“给用户推几个商品”，而是一个持续感知用户意图并动态响应的 agent。</p><h2 id="应用场景" tabindex="-1"><a class="header-anchor" href="#应用场景"><span>应用场景</span></a></h2><h3 id="_1-页面推荐模块" tabindex="-1"><a class="header-anchor" href="#_1-页面推荐模块"><span>1. 页面推荐模块</span></a></h3><p>用户一打开页面，就可以看到更贴近个人兴趣的推荐内容。这里适合用 agent 思路的原因在于：页面首屏并没有显式输入，但用户的历史 context 已经足够提供一轮个性化判断。</p><h4 id="_1-1-甄选线路模块" tabindex="-1"><a class="header-anchor" href="#_1-1-甄选线路模块"><span>1.1 甄选线路模块</span></a></h4><p>可以根据用户的历史浏览、购买偏好、常看的目的地和价格区间，动态推荐更可能感兴趣的线路，而不是展示一组固定的运营配置数据。</p><div style="display:flex;justify-content:center;"><p><img src="/MyBlog/assets/image-GOntTTBC.png" alt="alt text"></p></div><h4 id="_1-2-城市景点-城市推荐模块" tabindex="-1"><a class="header-anchor" href="#_1-2-城市景点-城市推荐模块"><span>1.2 城市景点，城市推荐模块</span></a></h4><p>除了具体线路，也可以先推荐“用户可能感兴趣的城市以及景点”。</p><div style="display:flex;justify-content:center;"><p><img src="/MyBlog/assets/image-1-Ctr9Ht01.png" alt="alt text"></p></div><div style="display:flex;justify-content:center;"><p><img src="/MyBlog/assets/image-5-DOiEQ0c3.png" alt="alt text"></p></div><h3 id="_2-搜索结果的推荐" tabindex="-1"><a class="header-anchor" href="#_2-搜索结果的推荐"><span>2. 搜索结果的推荐</span></a></h3><div style="display:flex;justify-content:center;"><p><img src="/MyBlog/assets/image-3-iFyXX_W4.png" alt="alt text"></p></div><h3 id="_3-搜索文案的补全" tabindex="-1"><a class="header-anchor" href="#_3-搜索文案的补全"><span>3. 搜索文案的补全</span></a></h3><p>搜索补全是一个非常适合 agent 化的场景，因为它天然是在理解“用户还没说完的话”。</p><p>比如用户刚输入一个城市名、一个景点词，或者一个模糊需求，系统就可以结合上下文推测，他更可能想去哪里，这样补全出来的不只是关键词，而是更接近用户真实意图的下一步表达。</p><div style="display:flex;justify-content:center;"><p><img src="/MyBlog/assets/image-2-Blk8u0j0.png" alt="alt text"></p></div><h3 id="_4-行程设计" tabindex="-1"><a class="header-anchor" href="#_4-行程设计"><span>4. 行程设计</span></a></h3><p>这是最像 agent 的一个场景。</p><p>相比“推荐一条现成线路”，行程设计更像是根据用户目标动态生成方案。系统可以基于用户已有 context，再结合当前输入条件，例如：</p><ul><li>想去哪里</li><li>预算多少</li><li>玩几天</li><li>几个人出行</li><li>偏好轻松还是紧凑</li></ul><p>最终输出一个更个性化的行程线路。</p><div style="display:flex;justify-content:center;"><p><img src="/MyBlog/assets/image-4-UHxwEaeo.png" alt="alt text"></p></div></div><!--[--><!--]--></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="vp-meta-item last-updated"><span class="meta-item-label">Last Updated: </span><time class="meta-item-info" datetime="2026-05-14T12:33:06.000Z" data-allow-mismatch>5/14/26, 8:33 PM</time></div><div class="vp-meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">mingzhuang.ji</span><!----><!--]--><!--]--></span></div></div></footer><!----><!--[--><!--]--></main><!--]--></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/MyBlog/assets/app-umPNeXv7.js" defer></script>
+  </body>
+</html>

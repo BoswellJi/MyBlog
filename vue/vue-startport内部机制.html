@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.31" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <title>Hello, Boswell</title><meta name="description" content="Boswell's blog">
+    <link rel="preload" href="/MyBlog/assets/style-k9uwAu_g.css" as="style"><link rel="stylesheet" href="/MyBlog/assets/style-k9uwAu_g.css">
+    <link rel="modulepreload" href="/MyBlog/assets/app-umPNeXv7.js"><link rel="modulepreload" href="/MyBlog/assets/vue-startport内部机制-vcI53_Ut.js">
+    
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container external-link-icon" vp-container><!--[--><header class="vp-navbar" vp-navbar><div class="vp-toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a class="route-link" href="/MyBlog/"><!----><span class="vp-site-name" aria-hidden="true">Hello, Boswell</span></a></span><div class="vp-navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button type="button" class="vp-toggle-color-mode-button" title="toggle color mode"><svg class="light-icon" viewbox="0 0 32 32" style=""><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg class="dark-icon" viewbox="0 0 32 32" style="display:none;"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="vp-sidebar-mask"></div><!--[--><aside class="vp-sidebar" vp-sidebar><!----><!--[--><!--]--><ul class="vp-sidebar-items"><!--[--><li><p tabindex="0" class="vp-sidebar-item vp-sidebar-heading"> <!----></p><!----></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="vp-page"><!--[--><!--]--><div vp-content><!--[--><!--]--><div id="content"><h2 id="starportcarrier-星港搬运器" tabindex="-1"><a class="header-anchor" href="#starportcarrier-星港搬运器"><span>StarportCarrier 星港搬运器</span></a></h2><ul><li>用于创建星港的全局飞行器；</li></ul><h2 id="starportcraft-星港飞行器" tabindex="-1"><a class="header-anchor" href="#starportcraft-星港飞行器"><span>StarportCraft 星港飞行器</span></a></h2><ul><li>用于将星港从老位置移动到新位置<strong>它的位置大小和<code>StarportProxy</code>组件相同</strong>；</li><li>获取<code>portMap</code>中的存储的<code>Starport</code>的上下文信息；</li></ul><h2 id="starport-星港" tabindex="-1"><a class="header-anchor" href="#starport-星港"><span>Starport 星港</span></a></h2><ul><li>用于创建星港容器，每个星港容器都有一个唯一的标识；</li><li>通过获取插槽组件，创建星港代理组件，同时将插槽组件添加到全局状态<code>portMap</code>中；</li></ul><h2 id="starportproxy-星港代理" tabindex="-1"><a class="header-anchor" href="#starportproxy-星港代理"><span>StarportProxy 星港代理</span></a></h2><ul><li>用于创建星港元素；</li><li>记录<code>StarportProxy</code>的dom信息，到<code>portMap</code>中；</li><li>用来存放<code>StarportCraft</code>的<code>Teleport</code>移动的元素；</li><li>跳转路由后，获取指定<code>port</code>的<code>Starport</code>,获取当前的<code>StarportProxy</code>的dom信息；</li></ul><h2 id="createinternalstate" tabindex="-1"><a class="header-anchor" href="#createinternalstate"><span>createInternalState</span></a></h2><ul><li>根据星港唯一标识获取星港实例/创建星港实例/删除星港实例；</li></ul><h2 id="createstarportinstance" tabindex="-1"><a class="header-anchor" href="#createstarportinstance"><span>createStarportInstance</span></a></h2><ul><li>创建星港实例，所有状态参数；</li></ul><h2 id="动画流程" tabindex="-1"><a class="header-anchor" href="#动画流程"><span>动画流程</span></a></h2><ol><li><p>创建<code>StarportCarrier</code>,初始化时<code>portMap</code>为空,所以不会创建<code>StarportCraft</code>;</p></li><li><p>跳转人默认路由,创建<code>Starport</code>,<code>Starport</code>内部创建<code>StarportProxy</code>,<code>StarportProxy</code>内部会创建<code>StarportInstance</code>并存入<code>portMap</code>,并且安装之后将<code>StarportProxy</code>的根元素 dom 对象赋值给<code>StarportInstance</code>属性<code>el</code>,因为<code>StarportCarrier</code>渲染函数中使用了<code>portMap</code>,所以当<code>portMap</code>更新后,会重新渲染,创建<code>StarportCraft</code>,其中会拿到安装的<code>StarportProxy</code>的 dom 对象实例，所以可以获取 dom 的尺寸位置,就会将<code>StarportCraft</code>组件移动到<code>StarportProxy</code>位置,<code>StarportCraft</code>中创建的<code>Teleport</code>会将插槽组件,移动到对应的<code>StarportProxy</code>中创建的目标<code>DOM</code>中:</p><ul><li>初始化星港<code>starport</code>生成对应的飞行器<code>StarportCraft</code>这时有了飞行器的初始化样式也就是<code>对应的星港的样式</code>；</li></ul></li><li><p>跳转页面时:</p><ul><li><code>RouterView</code>中切目标换路由,创建其中的<code>Starport</code>: <ul><li>获取<code>Starportproxy</code>的位置尺寸信息;</li><li>首先将飞行器<code>display:block</code>，因为飞行器落地后，会<code>display:none</code>飞行器；</li><li>飞行器将星港元素添加到<code>Teleport</code>组件插槽中，切换<code>StarportCraft</code>飞行器的样式到<code>目标星港样式</code>；</li><li>到目的地后<code>display:none</code>飞行器，将<code>Teleport</code>中的插槽内容<code>星港</code>放到目标位置；</li></ul></li></ul></li></ol></div><!--[--><!--]--></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="vp-meta-item last-updated"><span class="meta-item-label">Last Updated: </span><time class="meta-item-info" datetime="2026-04-17T08:46:10.000Z" data-allow-mismatch>4/17/26, 4:46 PM</time></div><div class="vp-meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: aiyoudqrjmz@163.com">Boswell</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">mingzhuang.ji</span><!----><!--]--><!--]--></span></div></div></footer><!----><!--[--><!--]--></main><!--]--></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/MyBlog/assets/app-umPNeXv7.js" defer></script>
+  </body>
+</html>

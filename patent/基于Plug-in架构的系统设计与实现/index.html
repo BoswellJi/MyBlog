@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.31" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <title>Hello, Boswell</title><meta name="description" content="Boswell's blog">
+    <link rel="preload" href="/MyBlog/assets/style-k9uwAu_g.css" as="style"><link rel="stylesheet" href="/MyBlog/assets/style-k9uwAu_g.css">
+    <link rel="modulepreload" href="/MyBlog/assets/app-umPNeXv7.js"><link rel="modulepreload" href="/MyBlog/assets/readme-BT41jKa9.js">
+    
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container external-link-icon" vp-container><!--[--><header class="vp-navbar" vp-navbar><div class="vp-toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a class="route-link" href="/MyBlog/"><!----><span class="vp-site-name" aria-hidden="true">Hello, Boswell</span></a></span><div class="vp-navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button type="button" class="vp-toggle-color-mode-button" title="toggle color mode"><svg class="light-icon" viewbox="0 0 32 32" style=""><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg class="dark-icon" viewbox="0 0 32 32" style="display:none;"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="vp-sidebar-mask"></div><!--[--><aside class="vp-sidebar" vp-sidebar><!----><!--[--><!--]--><ul class="vp-sidebar-items"><!--[--><li><p tabindex="0" class="vp-sidebar-item vp-sidebar-heading"> <!----></p><!----></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="vp-page"><!--[--><!--]--><div vp-content><!--[--><!--]--><div id="content"><h2 id="基于plug-in架构的系统设计与实现" tabindex="-1"><a class="header-anchor" href="#基于plug-in架构的系统设计与实现"><span>基于Plug-in架构的系统设计与实现</span></a></h2><h2 id="一、术语-请对本领域的技术词语进行解释说明-如果有英文要给出中文注释或解释" tabindex="-1"><a class="header-anchor" href="#一、术语-请对本领域的技术词语进行解释说明-如果有英文要给出中文注释或解释"><span>一、术语：请对本领域的技术词语进行解释说明，如果有英文要给出中文注释或解释</span></a></h2><ol><li>架构设计（Architecture Design）：指在软件开发过程中，对系统的整体结构进行规划和设计，包括系统的组成部分、各部分之间的关系以及系统的运行环境等方面的设计。</li><li>架构实现（Architecture Implementation）：指将设计好的架构方案转化为实际可运行的软件系统的过程，包括编码、测试、部署等步骤。</li><li>插件（Plugin）：指在软件系统中可以独立开发、独立部署，并能够在不修改主程序的情况下，通过特定接口与主程序进行交互，从而扩展主程序功能的模块。</li><li>适配层（Adapter Layer）：指在软件系统中用于实现不同模块之间接口兼容的层，通过适配层可以将一个模块的接口转换为另一个模块所期望的接口，从而实现模块之间的协作。</li><li>页面（Page）：指在软件系统中展示信息和提供交互功能的界面，用户通过页面与系统进行交互。</li><li>组件（Component）：指在软件系统中具有独立功能的模块，可以被复用和替换，通常通过接口与其他组件进行交互。</li><li>样式（Style）：指在软件系统中定义界面元素的外观和布局的规则和规范，包括颜色、字体、大小、位置等方面的设计。</li><li>脚本（Script）：指在软件系统中用于实现特定功能的代码，通常是指前端的JavaScript代码，用于实现页面的交互逻辑和动态效果。</li><li>js sdk（JavaScript Software Development Kit）：指为开发者提供的一套工具和库，用于简化特定平台或服务的开发过程，通常包括API接口、示例代码、文档等资源。</li><li>js bridge（JavaScript Bridge）：指在混合应用开发中，用于实现JavaScript与原生代码之间通信的机制，通过js bridge可以让JavaScript调用原生功能，也可以让原生代码调用JavaScript函数，从而实现混合应用的功能扩展。</li><li>bug: 指软件系统中的错误或缺陷，可能导致系统功能异常、性能下降或安全漏洞等问题。</li><li>Vue: 是一个用于构建用户界面的渐进式JavaScript框架，提供了响应式数据绑定和组件化开发的能力，广泛应用于前端开发领域。</li></ol><h2 id="二、本技术方案的发明点概述-请用一段话描述本发明相对于现有技术的改进之处。" tabindex="-1"><a class="header-anchor" href="#二、本技术方案的发明点概述-请用一段话描述本发明相对于现有技术的改进之处。"><span>二、本技术方案的发明点概述：请用一段话描述本发明相对于现有技术的改进之处。</span></a></h2><p>本发明提出了一种插件化的架构设计与实现方案，通过将不同渠道的功能封装为独立的插件模块，使核心系统通过适配层与插件功能解耦，从而降低系统复杂度和维护成本，提高系统的灵活性、稳定性和扩展性以及程序的可读性。</p><h2 id="三、背景技术-做这项发明之前该技术现状的详细描述。" tabindex="-1"><a class="header-anchor" href="#三、背景技术-做这项发明之前该技术现状的详细描述。"><span>三、背景技术：做这项发明之前该技术现状的详细描述。</span></a></h2><p>以电商分销系统为例，该类系统通常需要运行于不同渠道。随着接入渠道数量增加，订单来源也会相应增多，因此往往需要将分销系统接入多个渠道平台。相关渠道平台可能包括 App、小程序等不同的容器环境，因此需要针对不同渠道对分销系统进行定制化开发，定制内容包括界面主题、功能模块以及专属页面等。</p><p>目前市面上的大多数开发方案，通常是在核心分销系统中进行耦合式开发，通过平台判断以及大量条件分支语句来实现不同渠道的适配，同时造成程序的不同渠道的状态随着渠道数量的增加而变得复杂且混乱，程序的可读性也会随之降低，大大增加了项目的维护成本。</p><h2 id="四、背景技术的技术问题-指出背景技术在哪些地方存在哪些缺陷和不足-。" tabindex="-1"><a class="header-anchor" href="#四、背景技术的技术问题-指出背景技术在哪些地方存在哪些缺陷和不足-。"><span>四、背景技术的技术问题（指出背景技术在哪些地方存在哪些缺陷和不足）。</span></a></h2><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">解决的问题必须是技术问题，例如传输速度低、硬件成本高等，而非个人体验（如美观）</span>
+<span class="line"></span>
+<span class="line">如果技术问题有多个，需要都列出来，并指出最主要解决的技术问题</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>低内聚、高耦合：核心系统与不同渠道的功能模块之间存在紧密耦合关系，会导致以下问题：</p><ol><li>维护性差：各渠道的判断与处理逻辑散落于各个页面中，维护困难，且容易遗漏。</li><li>可读性差：各类渠道逻辑与状态相互混杂，导致代码可读性较差，难以理解和维护。</li><li>扩展性差：当需要新增分销渠道时，往往需要修改大量零散代码，容易引入新的 bug。</li></ol><h2 id="五、本案的详细阐述-即您是通过怎样的技术手段和方法解决的上述技术问题的。-本部分为重点内容-需要将代码在运行时所要实现的步骤进行详细描述。-说明" tabindex="-1"><a class="header-anchor" href="#五、本案的详细阐述-即您是通过怎样的技术手段和方法解决的上述技术问题的。-本部分为重点内容-需要将代码在运行时所要实现的步骤进行详细描述。-说明"><span>五、本案的详细阐述，即您是通过怎样的技术手段和方法解决的上述技术问题的。（本部分为重点内容，需要将代码在运行时所要实现的步骤进行详细描述。）说明：</span></a></h2><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">技术方案描述中需要写清楚数据的流向，包括数据如何产生、中间涉及到哪些处理以及最终输出的是什么数据的整个过程；</span>
+<span class="line"></span>
+<span class="line">用文字结合图示来描述技术方案，其中图示包括但不限于流程图、界面图、时序图、系统架构图、网络拓扑图、原理图、应用环境图等；</span>
+<span class="line"></span>
+<span class="line">写清楚每个步骤的执行主体，例如是由终端执行还是由服务器来执行；</span>
+<span class="line">请多举例和结合具体的应用场景进行描述；</span>
+<span class="line"></span>
+<span class="line">注意同一个东西请用同一个词来表述；</span>
+<span class="line"></span>
+<span class="line">不要粘贴代码，如果确实需通过代码说明，交底中的代码不能超过10行,并需要提供每一行代码的注释。</span>
+<span class="line"></span>
+<span class="line">具体包括以下几种情况：</span>
+<span class="line"></span>
+<span class="line">1）如果涉及软件产品，分别从产品侧和技术侧两个角度进行描述，产品侧可描述软件产品即前端的形态（提供界面图），技术侧描述后台的数据处理（请提供流程图）；</span>
+<span class="line"></span>
+<span class="line">2）如果涉及到多端交互，需要从每一端出发写出该端所涉及到的处理（请提供时序图）</span>
+<span class="line"></span>
+<span class="line">3）如果涉及到界面，需要写出界面展示了哪些内容（请提供界面图）；</span>
+<span class="line"></span>
+<span class="line">4）如果涉及到算法，需要写出具体的算法逻辑规则；</span>
+<span class="line"></span>
+<span class="line">5）如果涉及到公式，需要写出具体的公式形式，并给出公式中每个参数的物理含义；</span>
+<span class="line"></span>
+<span class="line">6）如果涉及到系统架构，需要描述系统中各组成部分的作用、各组成部分之间的关系以及各组成部分之间的交互过程（请提供系统架构图、网络拓扑图等）。</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>为解决上述问题，本方案采用插件化架构对 H5 分销系统进行改造。插件化架构是一种将系统功能模块化、独立化的设计方法，能够提高系统的可维护性和可扩展性，同时形成一套基础开发规范。</p><p>本方案将核心 H5 分销系统作为基础平台，用于提供公共页面和核心逻辑；同时，将不同分销商的定制化功能封装为独立插件，并在需要时进行加载，从而实现面向不同分销商的定制化分销系统。</p><p>通过上述方式，可以将不同分销商的逻辑有效隔离，避免代码混杂，提高代码的可读性和维护性。同时，当需要新增分销商平台时，仅需开发对应的新插件，而无需修改核心 H5 分销系统代码，从而提高系统的扩展性。</p><h2 id="架构图" tabindex="-1"><a class="header-anchor" href="#架构图"><span>架构图</span></a></h2><p><img src="/MyBlog/assets/image-14-D0Tlewna.png" alt="alt text"></p><h3 id="核心层" tabindex="-1"><a class="header-anchor" href="#核心层"><span>核心层</span></a></h3><p>核心层用于承载与渠道无关的核心分销系统的逻辑和页面，提供基础功能与服务，并仅与适配器层进行交互。</p><p><img src="/MyBlog/assets/image-12-B8I1SS9k.png" alt="alt text"></p><h3 id="适配器层" tabindex="-1"><a class="header-anchor" href="#适配器层"><span>适配器层</span></a></h3><p>适配器层用于实现核心层与插件层之间的接口适配，向核心层提供统一调用接口，同时负责将插件功能适配至核心系统。适配器层主要包括以下两个模块：</p><p><img src="/MyBlog/assets/image-1-Bq6Do1r0.png" alt="alt text"></p><ol><li>组件适配模块：用于适配不同分销渠道之间的组件差异，例如登录组件、支付组件等。</li><li>业务适配模块：用于适配不同分销渠道之间的业务逻辑差异，例如下单处理逻辑、支付逻辑等。</li></ol><h3 id="插件层" tabindex="-1"><a class="header-anchor" href="#插件层"><span>插件层</span></a></h3><p>插件层用于封装不同渠道的定制化功能，提供与核心系统接口兼容的页面、组件、样式、脚本以及能力库等资源。每个插件对应一个分销渠道，包含以下内容：</p><p><img src="/MyBlog/assets/image-7-CJbdKGfM.png" alt="alt text"></p><ol><li>index.ts：插件的入口文件，用于导出插件的页面、组件、功能库，以及初始化分销渠道的样式、脚本以及初始化数据。</li><li>pages：分销渠道的页面，例如专属登录页等。</li><li>script：分销渠道的脚本，例如平台JS SDK。</li><li>style：分销渠道的样式，例如主题色、字体等。</li><li>components：分销渠道需要定制开发的 Vue 组件。</li><li>directives：分销渠道需要提供的特定 Vue 指令。</li><li>libs：分销渠道的能力封装库，用于基于 JS SDK 进行封装及定制逻辑封装，例如混合 App 场景下的 JS Bridge。</li></ol><h2 id="流程图" tabindex="-1"><a class="header-anchor" href="#流程图"><span>流程图</span></a></h2><p><img src="/MyBlog/assets/image-10-C4-yOyeQ.png" alt="alt text"></p><p>上述流程图展示了本方案在终端侧的插件化处理流程。首先，用户在终端发起访问请求并进入 core 层的 H5 页面，core 层负责承载与渠道无关的基础页面结构和通用业务入口。随后，core 层将当前页面所需的能力请求传递至适配器层，由适配器层统一接收并处理。</p><p>适配器层首先执行渠道判断，用于识别当前访问环境所属的目标渠道；在完成渠道识别后，适配器层进一步执行插件初始化过程，这个过程中会将插件需要依赖的资源加载完成，例如，样式，脚本，数据等。</p><p>并根据识别结果对 UI 组件和业务逻辑进行适配，使核心页面在不修改自身代码的前提下获得对应渠道所需的界面能力与业务能力。</p><p>在适配完成后，适配器层将请求路由至对应的渠道插件。不同渠道分别对应插件 1、插件 2 至插件 n，各插件中封装该渠道的页面、组件、样式、脚本以及能力库。</p><p>这样，当终端用户访问同一套 core 页面时，系统能够通过适配器层自动加载目标插件，并输出对应渠道的定制化页面与功能，从而实现核心系统与渠道差异逻辑的解耦，并提升后续新增插件时的扩展效率。</p><h2 id="目录结构" tabindex="-1"><a class="header-anchor" href="#目录结构"><span>目录结构</span></a></h2><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">├─ .editorconfig            # 编辑器配置文件</span>
+<span class="line">├─ .eslintignore            # ESLint 忽略配置文件</span>
+<span class="line">├─ .eslintrc.yml            # ESLint 配置文件</span>
+<span class="line">├─ .prettierignore          # Prettier 忽略配置文件</span>
+<span class="line">├─ .prettierrc.yml          # Prettier 配置文件</span>
+<span class="line">├─ package-lock.json        # npm 锁定文件</span>
+<span class="line">├─ package.json             # npm 包配置文件</span>
+<span class="line">├─ postcss.config.js        # PostCSS 配置文件</span>
+<span class="line">├─ README.md                # 项目说明文件</span>
+<span class="line">├─ src                      # 项目源代码目录</span>
+<span class="line">│  ├─ assets                # 静态资源目录</span>
+<span class="line">│  ├─ common                # 公共模块目录</span>
+<span class="line">│  │  ├─ components         # 公共组件目录</span>
+<span class="line">│  │  ├─ constant           # 常量目录</span>
+<span class="line">│  │  ├─ less               # 公共样式目录</span>
+<span class="line">│  │  └─ utils              # 工具函数目录</span>
+<span class="line">│  ├─ enums                 # 枚举目录</span>
+<span class="line">│  ├─ hooks                 # 自定义 Hook 目录</span>
+<span class="line">│  ├─ pages                 # 页面目录</span>
+<span class="line">│  ├─ adapter               # 适配器目录</span>
+<span class="line">│  │  ├─ business           # 业务适配模块</span>
+<span class="line">│  │  │  └─ index.ts</span>
+<span class="line">│  │  ├─ components             # 组件适配模块</span>
+<span class="line">│  │  │  └─ index.vue</span>
+<span class="line">│  │  └─ index.ts</span>
+<span class="line">│  ├─ plugins                   # 插件目录</span>
+<span class="line">│  │  ├─ bcm                    # 分销商 A 的插件</span>
+<span class="line">│  │  │  ├─ components          # 组件目录</span>
+<span class="line">│  │  │  │  └─ navbar</span>
+<span class="line">│  │  │  │     └─ index.vue</span>
+<span class="line">│  │  │  ├─ directives          # 指令目录</span>
+<span class="line">│  │  │  │  └─ index.ts</span>
+<span class="line">│  │  │  ├─ index.ts</span>
+<span class="line">│  │  │  ├─ lib                 # 能力库目录</span>
+<span class="line">│  │  │  │  ├─ index.ts</span>
+<span class="line">│  │  │  ├─ pages               # 页面目录</span>
+<span class="line">│  │  │  │  └─ auth</span>
+<span class="line">│  │  │  │     ├─ App.vue</span>
+<span class="line">│  │  │  └─ styles              # 样式目录</span>
+<span class="line">│  │  │     └─ theme.less       # 主题样式</span>
+<span class="line">│  │  ├─ default                # 默认插件</span>
+<span class="line">│  │  │  ├─ components          # 组件目录</span>
+<span class="line">│  │  │  │  └─ index.vue</span>
+<span class="line">│  │  │  ├─ directives          # 指令目录</span>
+<span class="line">│  │  │  │  └─ index.ts</span>
+<span class="line">│  │  │  ├─ index.ts</span>
+<span class="line">│  │  │  ├─ lib                 # 能力库目录</span>
+<span class="line">│  │  │  │  └─ index.ts</span>
+<span class="line">│  │  │  ├─ pages               # 页面目录</span>
+<span class="line">│  │  │  │  └─ index.vue</span>
+<span class="line">│  │  │  └─ styles              # 样式目录</span>
+<span class="line">│  │  │     └─ theme.less       # 主题样式</span>
+<span class="line">│  │  └─ type.ts                # 类型定义文件</span>
+<span class="line">│  └─ types                     # 类型定义目录</span>
+<span class="line">├─ tailwind.config.js           # Tailwind CSS 配置文件</span>
+<span class="line">├─ tsconfig.json                # TypeScript 配置文件</span>
+<span class="line">└─ vite.config.ts               # Vite 配置文件</span>
+<span class="line"></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="六、第五项的技术手段产生了什么技术效果-通常为克服了第四项所指出的技术问题-。" tabindex="-1"><a class="header-anchor" href="#六、第五项的技术手段产生了什么技术效果-通常为克服了第四项所指出的技术问题-。"><span>六、第五项的技术手段产生了什么技术效果（通常为克服了第四项所指出的技术问题）。</span></a></h2><p>通过上述方式，可以将不同分销渠道的功能根据类型，组件，页面，功能库等都开发到对应的插件当中去，将不同分销渠道的逻辑隔离开来，避免代码混杂，提高代码的可读性和维护性。</p><p>同时，当需要新增分销渠道时，仅需开发对应的新插件，实现对应的功能，而无需修改核心 H5 分销系统代码，从而提高系统的扩展性。</p><h2 id="八、参考文献-对于理解交底书中的技术方案有帮助的专利-论文-期刊-如有则填写" tabindex="-1"><a class="header-anchor" href="#八、参考文献-对于理解交底书中的技术方案有帮助的专利-论文-期刊-如有则填写"><span>八、参考文献（对于理解交底书中的技术方案有帮助的专利/论文/期刊，如有则填写）</span></a></h2><ol><li>Vue.js Plugin：https://vuejs.org/guide/reusability/plugins.html</li><li>Nuxt.js Module：https://nuxt.com/docs/4.x/guide/modules/getting-started</li><li>Pinia Plugin：https://pinia.vuejs.org/core-concepts/plugins.html</li><li>从VS Code看优秀插件系统的设计思路: https://cloud.tencent.com/developer/article/2324807</li></ol></div><!--[--><!--]--></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="vp-meta-item last-updated"><span class="meta-item-label">Last Updated: </span><time class="meta-item-info" datetime="2026-04-17T08:46:10.000Z" data-allow-mismatch>4/17/26, 4:46 PM</time></div><div class="vp-meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">mingzhuang.ji</span><!----><!--]--><!--]--></span></div></div></footer><!----><!--[--><!--]--></main><!--]--></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/MyBlog/assets/app-umPNeXv7.js" defer></script>
+  </body>
+</html>

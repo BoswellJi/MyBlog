@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.31" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <title>Hello, Boswell</title><meta name="description" content="Boswell's blog">
+    <link rel="preload" href="/MyBlog/assets/style-k9uwAu_g.css" as="style"><link rel="stylesheet" href="/MyBlog/assets/style-k9uwAu_g.css">
+    <link rel="modulepreload" href="/MyBlog/assets/app-umPNeXv7.js"><link rel="modulepreload" href="/MyBlog/assets/1.6webgl与其他图形技术的比较-DBkvxdPI.js">
+    
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container external-link-icon" vp-container><!--[--><header class="vp-navbar" vp-navbar><div class="vp-toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a class="route-link" href="/MyBlog/"><!----><span class="vp-site-name" aria-hidden="true">Hello, Boswell</span></a></span><div class="vp-navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button type="button" class="vp-toggle-color-mode-button" title="toggle color mode"><svg class="light-icon" viewbox="0 0 32 32" style=""><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg class="dark-icon" viewbox="0 0 32 32" style="display:none;"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="vp-sidebar-mask"></div><!--[--><aside class="vp-sidebar" vp-sidebar><!----><!--[--><!--]--><ul class="vp-sidebar-items"><!--[--><li><p tabindex="0" class="vp-sidebar-item vp-sidebar-heading"> <!----></p><!----></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="vp-page"><!--[--><!--]--><div vp-content><!--[--><!--]--><div id="content"><h2 id="opengl历史" tabindex="-1"><a class="header-anchor" href="#opengl历史"><span>openGL历史</span></a></h2><ol><li>SGI为工作站专门设计了3D图形api,IRIS GL API;</li><li>增加较多功能，所以需要实现向后兼容；</li><li>IRIS GL api后来变得越来越难以维护，也越来越难使用；</li><li>所以这时候，需要开发一个开放的标准；</li><li>标准使得程序员比较容易建立与他们的图形硬件相兼容的软件；</li><li>SGI公司开始从头设计openGL；</li><li>openGL结构评审委员会决定openGL未来（openGL ARB）</li><li>openGL ARB 转交给 Khronos小组（同时该组织也负责webgl规范</li><li>openGL的升级策略，总是保证新版本的向后兼容</li><li>带有可编程着色器的openGL与webGL十分相似</li></ol><h2 id="opengl-es" tabindex="-1"><a class="header-anchor" href="#opengl-es"><span>openGL es</span></a></h2><ol><li>webgl的蓝本是opengl es 2.0</li><li>opengl es 2.0无法与以前的版本实现向后兼容</li></ol><h2 id="direct3d" tabindex="-1"><a class="header-anchor" href="#direct3d"><span>Direct3D</span></a></h2><ol><li>DirectX是微软多媒体和游戏编程api的名称</li><li>Reality Lab 3D 图形 api</li><li>微软利用上面的技术开发了Direct3D的第一个版本</li><li>造成台式3D图形的分崩离析，但同时也造成3D图形行业的健康竞争</li><li>openGL Direct3D</li><li>Direct3D第八版本，加入可编程着色器</li><li>第九版推出 <code>高级着色器语言HLSL</code></li></ol><h2 id="html5画布" tabindex="-1"><a class="header-anchor" href="#html5画布"><span>HTML5画布</span></a></h2><ol><li>html的第5版本;</li><li>canvas是web页面中的一个矩形区域，在这个区域我们可以用 <code>javascript</code> 语言编写 <code>绘制图形</code> 的代码；</li><li>Dashboard是包含许多小部件Widgets的小型应用程序，这些 <code>小部件</code> 与 <code>web页面</code> 一样，都是建立在 <code>html,css，javascript</code> 等技术之上的；</li><li>Dashboard和safari web浏览器一样，都是使用<code>webkit开源浏览器引擎</code>绘制web内容；</li></ol><h2 id="可缩放矢量图形" tabindex="-1"><a class="header-anchor" href="#可缩放矢量图形"><span>可缩放矢量图形</span></a></h2><ol><li>一个用xml格式描述<code>2D图形</code>的语言；</li><li>使用点，线，曲线等集合图元，把这些几何图元保存为数学表达式；</li><li>显示矢量图形的程序，根据这些数学表达式生成屏幕上的图像；</li><li>这样会使，用户放大图形，svg生成的图像保持一样的清晰度；</li><li>微软等公司以<code>建议标准</code>的形式向w3c提供了矢量标志语言（VML）；</li><li>adobe等公司提出另一个<code>建议标准</code>,精密图形标志语言（PGML）;</li><li>w3c从两种<code>建议标准</code>各取一部分，组成<code>svg</code>(SVG)，2001年称为w3c的推荐标准；</li><li>svg包含svg(svg Tiny)微型版【针对低端移动设备】，svg(svg Basic)基础版【针对高端移动设备】</li><li>基于文本的</li></ol><h2 id="vrml和x3d" tabindex="-1"><a class="header-anchor" href="#vrml和x3d"><span>VRML和X3D</span></a></h2><ol><li>VRML: 用于描述3D图形的，基于xml的虚拟显示标志语言</li><li>X3D： 是VRML的后继者</li></ol></div><!--[--><!--]--></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="vp-meta-item last-updated"><span class="meta-item-label">Last Updated: </span><time class="meta-item-info" datetime="2026-04-17T08:46:10.000Z" data-allow-mismatch>4/17/26, 4:46 PM</time></div><div class="vp-meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">jmz</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">Boswell</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: mingzhuang.ji@ly.com">mingzhuang.ji</span><!----><!--]--><!--]--></span></div></div></footer><!----><!--[--><!--]--></main><!--]--></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/MyBlog/assets/app-umPNeXv7.js" defer></script>
+  </body>
+</html>
